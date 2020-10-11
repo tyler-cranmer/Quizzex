@@ -1,0 +1,80 @@
+:root {
+  --main-background-color: #B0C4DE;
+  --main-text-color: black;
+  --card-front-text-size: 20pt;
+  --card-text-color: black;
+  --card-background-color: white;
+  --card-back-text-size: 12pt;
+}
+
+body {
+  background-color: grey;
+  padding: 0px;
+  margin: 0px;
+}
+
+#main {
+  position: relative;
+  background-color: var(--main-background-color);
+  padding: 10px;
+  min-width: 800px;
+  width: 70%;
+  margin: 0px auto;
+  height: 100%;
+}
+
+h1 {
+  color: var(--main-text-color);
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+textarea {
+  position: relative;
+  width: 99%;
+
+}
+
+.counter {
+  margin-top: 0px;
+  margin-bottom: 20px;
+  float: right;
+}
+
+.flashcard {
+  position: relative;
+  background-color: var(--card-background-color);
+  color: var(--card-text-color);
+  width: 500px;
+  min-height: 200px;
+  border-style: solid;
+  border-width: 0px 4px 2px 0px;
+  border-color: #A0B4CE;
+  margin: auto;
+}
+
+.flashcard p {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 480px;
+  overflow: auto;
+  margin: auto 10px;
+}
+
+#front-card-example p {
+  font-weight: bold;
+  font-size: var(--card-front-text-size);
+}
+
+#back-card-example p {
+  font-size: var(--card-back-text-size);
+}
+
+input {
+  float: right;
+  margin-right: 10px;
+}
