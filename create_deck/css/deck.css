@@ -1,0 +1,35 @@
+:root {
+    --main-background-color: #152131;
+    --main-text-color: white;
+  }
+  
+  body {
+    background-color: #152131;
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  #main {
+    position: relative;
+    background-color: var(--main-background-color);
+    padding: 10px;
+    min-width: 800px;
+    width: 70%;
+    margin: 0px auto;
+    height: 100%;
+  }
+  
+  h1 {
+    color: var(--main-text-color);
+  }
+  
+  label {
+    color: white;
+    display: block;
+    margin-top: 10px;
+  }
+
+  
+  input {
+    display: table;
+  }

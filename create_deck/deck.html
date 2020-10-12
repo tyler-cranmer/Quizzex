@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="css/deck.css"> <!--change this to create-new-deck.css-->
+  <meta charset="utf-8">
+  <title>Create Flashcard</title>
+</head>
+
+<body>
+  <div id="main" name="main">
+    <h1>Create New Deck</h1>
+
+    <label for="deck-name">Deck Name: </label>
+    <input type="text" id="deck-name" name="deck-name"><br><br>
+    
+    <label for="category-select">Category: </label>
+    <select id="category-select" name="category-select">
+        <option value="history">History</option>
+        <option value="algebra">Algebra</option>
+        <option value="spanish">Spanish</option>
+        <option value="softwareDev">Software Dev Tools and Methods</option>
+    </select>
+    <br>
+    <br>
+
+    <label for="sharing-permissions">Make this deck public? </label>
+    <input type="checkbox">
+
+    <br>
+    <br>
+    
+    <input type="button" id="save-button" name="save-button" value="Save">
+    <input type="button" id="back-button" name="back-button" value="Back">
+    <br>
+
+  </div>
+
+</body>
+
+</html>
