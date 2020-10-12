@@ -1,6 +1,6 @@
 :root {
-  --main-background-color: #B0C4DE;
-  --main-text-color: black;
+  --main-background-color: #152131;
+  --main-text-color: white;
   --card-front-text-size: 20pt;
   --card-text-color: black;
   --card-background-color: white;
@@ -16,6 +16,7 @@ body {
 #main {
   position: relative;
   background-color: var(--main-background-color);
+  color: var(--main-text-color);
   padding: 10px;
   min-width: 800px;
   width: 70%;
@@ -50,9 +51,6 @@ textarea {
   color: var(--card-text-color);
   width: 500px;
   min-height: 200px;
-  border-style: solid;
-  border-width: 0px 4px 2px 0px;
-  border-color: #A0B4CE;
   margin: auto;
 }
 
