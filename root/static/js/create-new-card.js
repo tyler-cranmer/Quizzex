@@ -13,7 +13,7 @@ $('#back-text').on('input', function() {
 function save() {
   var front = document.forms[0].elements[1].value;
   var back = document.forms[0].elements[2].value;
-  alert(front + " " + back);
+  alert("Front: " + front + "\nBack: " + back);
 }
 
 function back() {
