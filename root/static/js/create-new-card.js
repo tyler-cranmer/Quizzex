@@ -9,3 +9,13 @@ $('#back-text').on('input', function() {
   $('#back-counter').text(numchars + "/300");
   $('#back-card-example').html("<p>" + $('#back-text').val() + "</p>");
 });
+
+function save() {
+  var front = document.forms[0].elements[1].value;
+  var back = document.forms[0].elements[2].value;
+  alert(front + " " + back);
+}
+
+function back() {
+
+}

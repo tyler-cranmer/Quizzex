@@ -11,38 +11,40 @@
   <div id="main" name="main">
     <h1>Create Flashcard</h1>
 
-    <label for="deck-select">Choose a Deck:</label>
-    <select id="deck-select" name="deck-select">
-      <option value="history">History</option>
-      <option value="algebra">Algebra</option>
-      <option value="spanish">Spanish</option>
-      <option value="softwareDev">Software Dev Tools and Methods</option>
-    </select>
-    <br>
-    <br>
+    <form action="/createCard">
+      <label for="deck-select">Choose a Deck:</label>
+      <select id="deck-select" name="deck-select">
+        <option value="history">History</option>
+        <option value="algebra">Algebra</option>
+        <option value="spanish">Spanish</option>
+        <option value="softwareDev">Software Dev Tools and Methods</option>
+      </select>
+      <br>
+      <br>
 
-    <label for="front-text">Front:</label>
-    <textarea class="card-text" id="front-text" name="front-text" maxlength="300" rows="8" cols="50"></textarea>
-    <p class="counter" id="front-counter" name="front-counter">0/300</p>
-    <label for="front-card-example">Front Example:</label>
-    <div class="flashcard" id="front-card-example" name="front-card-example">
-      <p>Front of Card</p>
-    </div>
-    <br>
+      <label for="front-text">Front:</label>
+      <textarea class="card-text" id="front-text" name="front-text" maxlength="300" rows="8" cols="50"></textarea>
+      <p class="counter" id="front-counter" name="front-counter">0/300</p>
+      <label for="front-card-example">Front Example:</label>
+      <div class="flashcard" id="front-card-example" name="front-card-example">
+        <p>Front of Card</p>
+      </div>
+      <br>
 
-    <label for="back-text">Back:</label>
-    <textarea class="card-text" id="back-text" name="back-text" maxlength="300" rows="8" cols="50"></textarea>
-    <p class="counter" id="back-counter" name="back-counter">0/300</p>
-    <div id="back-counter" name="back-counter"></div>
-    <label for="back-card-example">Back Example:</label>
-    <div class="flashcard" id="back-card-example" name="back-card-example">
-      <p>Back of Card</p>
-    </div>
-    <br>
+      <label for="back-text">Back:</label>
+      <textarea class="card-text" id="back-text" name="back-text" maxlength="300" rows="8" cols="50"></textarea>
+      <p class="counter" id="back-counter" name="back-counter">0/300</p>
+      <div id="back-counter" name="back-counter"></div>
+      <label for="back-card-example">Back Example:</label>
+      <div class="flashcard" id="back-card-example" name="back-card-example">
+        <p>Back of Card</p>
+      </div>
+      <br>
 
-    <input type="button" id="save-button" name="save-button" value="Save">
-    <input type="button" id="back-button" name="back-button" value="Back">
-    <br>
+      <input type="button" id="save-button" name="save-button" value="Save" onclick="save()">
+      <input type="button" id="back-button" name="back-button" value="Back" onclick="back()">
+      <br>
+    </form>
 
   </div>
   <script type="text/javascript" src="../static/js/create-new-card.js"></script>
