@@ -14,10 +14,14 @@
     <form action="/createCard">
       <label for="deck-select">Choose a Deck:</label>
       <select id="deck-select" name="deck-select">
-        <option value="history">History</option>
-        <option value="algebra">Algebra</option>
-        <option value="spanish">Spanish</option>
-        <option value="softwareDev">Software Dev Tools and Methods</option>
+        {% if options %}
+          <option>{{ options }}</option>
+        {% else %}
+          <option value="history">History</option>
+          <option value="algebra">Algebra</option>
+          <option value="spanish">Spanish</option>
+          <option value="softwareDev">Software Dev Tools and Methods</option>
+        {% endif %}
       </select>
       <br>
       <br>
