@@ -37,10 +37,11 @@ def login(username, password):
         else:
             return False
 
-    
+
 @app.route('/')
 def mysite():
     return render_template('landingPage.html')
+
 @app.route('/doLogin')
 def dologin():
     username=request.args.get('username', None)
@@ -50,3 +51,7 @@ def dologin():
         return render_template('homePage.html')
     else:
         return render_template('invalidLogin.html')
+
+@app.route('/createCard')
+def createCard():
+    return render_template('create-new-card.html')
