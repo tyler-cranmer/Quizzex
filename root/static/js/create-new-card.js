@@ -17,5 +17,8 @@ function save() {
 }
 
 function back() {
-  window.location.href = '/library';
+  var res = confirm("Your new flashcard has not been saved.  Are you sure you would like to go back?");
+  if (res) {
+    window.location.href = '/library';
+  }
 }
