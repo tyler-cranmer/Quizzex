@@ -53,5 +53,9 @@ def dologin():
         return render_template('invalidLogin.html')
 
 @app.route('/createCard')
-def createCard():
+def goToCreateCard():
     return render_template('create-new-card.html')
+
+@app.route('/library')
+def goToLibrary():
+    return render_template('user-library.html')
