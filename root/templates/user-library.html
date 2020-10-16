@@ -14,7 +14,14 @@
     {% else %}
       <h1>Your Profile</h1>
     {% endif %}
-    <p id="deck-counter" name="deck-counter">You currently have {{ numdecks }} decks!</p>
+
+    {% if numdecks > 1 %}
+      <p id="deck-counter" name="deck-counter">You currently have {{ numdecks }} decks!</p>
+    {% else if numdecks == 1 %}
+      <p id="deck-counter" name="deck-counter">You currently have 1 deck!</p>
+    {% else %}
+      <p id="deck-counter" name="deck-counter">You currently have 0 decks</p>
+    {% endif %}
   </div>
   <a href="">Create Folder</a>
   <div id="folder-list" name="folder-list">
