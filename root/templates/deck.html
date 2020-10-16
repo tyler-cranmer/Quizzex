@@ -10,37 +10,40 @@
   <div id="main" name="main">
     <h1>Create New Deck</h1>
 
-    <label for="deck-name">Deck Name: </label>
-    <input type="text" id="deck-name" name="deck-name"><br><br>
+    <form action="createDeck">
+      <label for="deck-name">Deck Name: </label>
+      <input type="text" id="deck-name" name="deck-name"><br><br>
 
-    <label for="deck-description">Deck description: </label>
-    <br><br>
-    <textarea class="description" id="description" name="description" maxlength="300" rows="8" cols="50">Describe the contents of your deck here</textarea>
-    <p class="counter" id="desc-counter" name="desc-counter">0/300</p>
-    <br><br>
+      <label for="deck-description">Deck description: </label>
+      <br><br>
+      <textarea class="description" id="description" name="description" maxlength="300" rows="8" cols="50">Describe the contents of your deck here</textarea>
+      <p class="counter" id="desc-counter" name="desc-counter">0/300</p>
+      <br><br>
 
-    <label for="category-select">Category: </label>
-    <select id="category-select" name="category-select">
-        <option value="history">History</option>
-        <option value="algebra">Algebra</option>
-        <option value="spanish">Spanish</option>
-        <option value="softwareDev">Software Dev Tools and Methods</option>
-    </select>
-    <br>
-    <br>
+      <label for="category-select">Category: </label>
+      <select id="category-select" name="category-select">
+          <option value="history">History</option>
+          <option value="algebra">Algebra</option>
+          <option value="spanish">Spanish</option>
+          <option value="softwareDev">Software Dev Tools and Methods</option>
+      </select>
+      <br>
+      <br>
 
-    <label for="sharing-permissions">Make this deck public? </label>
-    <input type="checkbox">
+      <label for="sharing-permissions">Make this deck public? </label>
+      <input type="checkbox">
 
-    <br>
-    <br>
+      <br>
+      <br>
 
-    <input type="button" id="save-button" name="save-button" value="Save"><br>
-    <input type="button" id="back-button" name="back-button" value="Back">
-    <br>
+      <input type="button" id="save-button" name="save-button" value="Save" onClick="save()"><br>
+      <input type="button" id="back-button" name="back-button" value="Back" onClick="back()">
+      <br>
+    </form>
 
   </div>
 
+  <script type="text/javascript" src="../static/js/deck.js"></script>
 </body>
 
 </html>
