@@ -56,6 +56,10 @@ def dologin():
 def goToCreateCard():
     return render_template('create-new-card.html')
 
+@app.route('/createDeck')
+def goToCreateDeck():
+    return render_template('deck.html')
+
 @app.route('/library')
 def goToLibrary():
     return render_template('user-library.html')
