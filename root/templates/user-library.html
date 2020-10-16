@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="">
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Library</title>
+</head>
+
+<body>
+  <div id="user-info" name="user-info">
+    {% if username %}
+      <h1>{{ username }}'s Profile</h2>
+    {% else %}
+      <h1>Your Profile</h1>
+    {% endif %}
+    <p id="deck-counter" name="deck-counter">You currently have {{ numdecks }} decks!</p>
+  </div>
+  <a href="">Create Folder</a>
+  <div id="folder-list" name="folder-list">
+    {{ folders }}
+  </div>
+  <div id="deck-list" name="deck-list">
+    {{ decks }}
+  </div>
+</body>
+
+</html>
