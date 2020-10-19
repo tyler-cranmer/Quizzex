@@ -27,10 +27,16 @@
   </div>
   <a href="">Create Folder</a>
   <div id="folder-list" name="folder-list">
-    {{ folders }}
+    {% if folders %}
+      {{ folders }}
+    {% else %}
+      <p>You currently have no folders.</p>
   </div>
   <div id="deck-list" name="deck-list">
-    {{ decks }}
+    {% if decks %}
+      {{ decks }}
+    {% else %}
+      <p>You currently have no decks. Click the "Create New Deck" button below to get started!</p>
   </div>
   <br>
 
