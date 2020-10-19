@@ -16,29 +16,32 @@
       <input type="text" id="deck-name" name="deck-name"><br><br>
 
       <label for="deck-description">Deck description: </label>
-      <br><br>
-      <textarea class="description" id="description" name="description" maxlength="300" rows="8" cols="50">Describe the contents of your deck here</textarea>
+      <textarea class="description" id="description" name="description" maxlength="300" rows="8" cols="50"></textarea>
       <p class="counter" id="desc-counter" name="desc-counter">0/300</p>
       <br><br>
 
       <label for="category-select">Category: </label>
       <select id="category-select" name="category-select">
+        {% if options %}
+          <option>{{ options }}</option>
+        {% else %}
           <option value="history">History</option>
           <option value="algebra">Algebra</option>
           <option value="spanish">Spanish</option>
           <option value="softwareDev">Software Dev Tools and Methods</option>
+        {% endif %}
       </select>
       <br>
       <br>
 
       <label for="sharing-permissions">Make this deck public? </label>
-      <input type="checkbox">
+      <input type="checkbox" id="public-checkbox" name="public-checkbox">
 
       <br>
       <br>
 
-      <input type="button" id="save-button" name="save-button" value="Save" onClick="save()"><br>
-      <input type="button" id="back-button" name="back-button" value="Back" onClick="back()">
+      <input type="button" class="btn" id="save-button" name="save-button" value="Save" onClick="save()">
+      <input type="button" class="btn" id="back-button" name="back-button" value="Back" onClick="back()">
       <br>
     </form>
 
