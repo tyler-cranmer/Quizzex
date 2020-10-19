@@ -25,12 +25,6 @@
       <p id="deck-counter" name="deck-counter">You currently have 0 decks</p>
     {% endif %}
   </div>
-  <a href="">Create Folder</a>
-  <div id="folder-list" name="folder-list">
-    {% if folders %}
-      {{ folders }}
-    {% endif %}
-  </div>
   <div id="deck-list" name="deck-list">
     {% if decks %}
       {{ decks }}
@@ -42,6 +36,13 @@
 
   <input type="button" id="create-deck-button" name="create-deck-button" value="Create New Deck" onclick="createDeck()">
   <input type="button" id="create-card-button" name="create-card-button" value="Create New Card" onclick="createCard()">
+
+  <a href="">Create Folder</a>
+  <div id="folder-list" name="folder-list">
+    {% if folders %}
+      {{ folders }}
+    {% endif %}
+  </div>
 
   <script type="text/javascript" src="../static/js/user-library.js"></script>
 </body>
