@@ -60,6 +60,12 @@ def goToCreateCard():
 def goToCreateDeck():
     return render_template('deck.html')
 
+@app.route('/addNewDeck')
+def addnewDeck():
+    # Function will be run when the save button is pressed and form is submitted for
+    # deck.html page
+        pass
+
 @app.route('/library')
 def goToLibrary():
     return render_template('user-library.html')
