@@ -29,26 +29,26 @@
                     <p class = "content_subheading">Come Expand your Horizon</p>
                 </div>
                 <div class = "login_container">
-                         <form action="" method="get" class="form_login">
+                      <form id="loginForm" method="get" class="form_login" action="/doLogin">
                         <div class="form_login">
                           <label for="username">Username: </label>
-                          <input type="email" name="email" id="email" required>
+                          <input type="username" name="username" id="username" required>
                         </div>
                         <div class="form_login">
                           <label for="pwd">Password: </label>
                           <input type="password" name="pwd" id="pwd" required>
                         </div>
                         <div class="form_login">
-                          <input class = "button" type="submit" value="Sign In">
+                          <input class = "button" type="submit" value="Sign In" onClick="signIn">
                         </div>
-                      </form> 
+                      </form>
                 </div>
                 <div class= "login_container">
                     <div>
                     <a href="" class= "log-in-button">I forgot my password</a>
                     </div>
                     <div id="inline" >
-                    <p1>New to FlashCard? </p1> <p id = "join-now"> Join now</p>
+                    <p1>New to FlashCard?</p1> <p id="join-now"> Join now</p>
                     </div>
                 </div>
                 </div>
@@ -65,6 +65,6 @@
             </footer>
         </div>
 
-
+        <script type="text/javascript" src="static/js/Signinpage.js"></script>
     </body>
 </html>
