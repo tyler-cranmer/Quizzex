@@ -1,4 +1,5 @@
 import unittest
+import mysql.connector
 import helper_functions
 from helper_functions import *
 
@@ -17,7 +18,7 @@ class TestHelperFunctions(unittest.TestCase):
     # Unit Tests below here
 
     def get_user_info_from_database(self):
-        get_user('Allie') 
+        get_user('Allie')
         self.assertEqual((1, 'Allie', 'Password123', 'allie@gmail.com'))
 
 if __name__ == '__main__':
