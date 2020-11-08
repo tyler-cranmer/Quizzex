@@ -110,7 +110,7 @@ label, input {
 
 label {
     padding-right: 10px;
-   
+
 }
 
 
@@ -167,7 +167,8 @@ label {
     align-items: baseline;
     justify-content: center;
     margin: auto;
-  
+}
 
-
+#failedLoginText {
+  color: red;
 }
