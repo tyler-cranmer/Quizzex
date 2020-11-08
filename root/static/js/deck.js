@@ -12,9 +12,9 @@ $('#description').on('input', function() {
 /*
   save() is run when the save button is clicked to submit new deck information
   sends the following data to flashcard.py flask file:
-  - name: name of the Deck
+  - deck-name: name of the Deck
   - description: description of the deck
-  - category: deck category for folder organization
+  - category-select: deck category for folder organization
   - public-checkbox: sets public option for public/private decks
  */
 function save() {

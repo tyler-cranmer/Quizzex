@@ -93,9 +93,9 @@ def goToCreateDeck():
 def addNewDeck():
     # Function will be run when the save button is pressed and form is submitted for
     # deck.html page
-    name=request.args.get('name', None)
+    name=request.args.get('deck-name', None)
     description=request.args.get('description', None)
-    category=request.args.get('category', None)
+    category=request.args.get('category-select', None)
     isPublic=request.args.get('public-checkbox', None)
     if(name and description and category):
         # NEED TO ADD CODE TO SUBMIT DECK TO DATABASE HERE!
