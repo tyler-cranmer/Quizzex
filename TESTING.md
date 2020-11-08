@@ -77,3 +77,27 @@ TEST SUCCESSFUL CREATE DECK:
     Should update test when decks are importing into user-library correctly to ensure that functionality for newly created deck
   Post-conditions
     None at this time.  Later should display the new deck in the deck list on the user-library page
+
+TEST FAILED CREATE DECK:
+  Use case name
+    Verify failed save deck message is shown
+  Description
+    Test the save button for a deck when name, description, or category fields are not filled out
+  Pre-conditions
+    User is logged in with a valid account
+  Test steps
+    1. Navigate to deck.html (can click on the Create Deck button on user-library.html and do any one or all of steps 2-4
+    2. Omit a text string into the Deck Name field
+    3. Omit a text string into the Deck Description field
+    4. Omit a category from the drop down options
+    5. Click the 'Save' button
+  Expected result
+    User should remain on the deck.html page and see a message to fill out all fields before saving
+  Actual result
+    User remains on the deck.html page and sees a new message, "Please fill out all fields before saving."
+  Status (Pass/Fail)
+    Pass
+  Notes
+    Could possibly implement specific messages for each case of omitted fields
+  Post-conditions
+    None
