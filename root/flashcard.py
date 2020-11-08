@@ -64,7 +64,7 @@ def goToCreateDeck():
 def addnewDeck():
     # Function will be run when the save button is pressed and form is submitted for
     # deck.html page
-    mysite();
+    return mysite();
 
 @app.route('/library')
 def goToLibrary():

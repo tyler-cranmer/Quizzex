@@ -11,7 +11,7 @@ function save() {
   var isPublic = document.forms[0].elements[3].value;
 
   alert("Name: " + name + "\nDescription: " + description + "\nCategory: " + category + "\nIs it public?: " + isPublic);
-  return document.forms[0].submit();
+  document.forms[0].submit();
 }
 
 function back() {
