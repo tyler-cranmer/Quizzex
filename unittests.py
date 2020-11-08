@@ -1,4 +1,10 @@
 import unittest
+import helper_functions
+from helper_functions import *
+
+mydb= connect_db()
+mycursor = mydb.cursor(buffered=True)
+mycursor.execute("use flashcards")
 
 class TestHelperFunctions(unittest.TestCase):
 
@@ -10,8 +16,9 @@ class TestHelperFunctions(unittest.TestCase):
 
     # Unit Tests below here
 
-    def test_upper(self):
-        self.assertEqual('foo'.upper(), 'FOO')
+    def get_user_info_from_database(self):
+        get_user('Allie') 
+        self.assertEqual((1, 'Allie', 'Password123', 'allie@gmail.com'))
 
 if __name__ == '__main__':
     unittest.main()

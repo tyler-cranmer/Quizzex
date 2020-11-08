@@ -13,7 +13,7 @@ def connect_db():
       password=""
       )
      return mydb
-mydb= connect_db()
+mydb=connect_db()
 mycursor = mydb.cursor(buffered=True)
 mycursor.execute("use flashcards")
 
