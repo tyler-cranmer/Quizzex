@@ -97,7 +97,7 @@ def addNewDeck():
     description=request.args.get('description', None)
     category=request.args.get('category', None)
     isPublic=request.args.get('isPublic', None)
-    if(isPublic and name and description and category)):
+    if(isPublic and name and description and category):
         # NEED TO ADD CODE TO SUBMIT DECK TO DATABASE HERE!
         return goToLibrary()
     elif(not isPublic and name and description and category):
