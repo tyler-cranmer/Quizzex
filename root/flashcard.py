@@ -76,7 +76,7 @@ def addnewDeck():
 
 @app.route('/library')
 def goToLibrary():
-    return render_template('user-library.html')
+    return render_template('user-library.html', username=session['username'])
 
 @app.route('/signIn')
 def goToSignIn():
