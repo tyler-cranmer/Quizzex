@@ -9,9 +9,14 @@ header{
   align-items: center;
 }
 
+.header-inner{
+  padding: 0 0;
+  align-items: center;
+}
+
 header img{
   height: 60px;
-  padding-left: 10px;
+  padding-left: 0;
 }
 
 nav{
@@ -96,8 +101,9 @@ h4{
 }
 
 .deck-container{
-  display:block;
+  display:flex;
 }
+
 .decks{
   height: 250px;
   width: 345px;

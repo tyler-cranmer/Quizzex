@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="../static/css/landingStyle.css" rel ="stylesheet" type="text/css">
+    <link href="landingStyle.css" rel ="stylesheet" type="text/css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel ="stylesheet" type="text/css">
     <script
   src="https://code.jquery.com/jquery-3.5.1.min.js"
@@ -18,9 +18,10 @@
 
 
   <body>
-    <header class="container bg-white d-flex">
+    <header class="bg-white d-flex">
+        <div class="container d-flex header-inner">
         <div class="logo">
-            <img src="static/img/aspire_flashcards_icon.png" />
+            <img src="https://raw.githubusercontent.com/RegExTeam/projectRegEx/master/root/static/img/aspire_flashcards_icon.png"/>
             <div></div>
         </div>
         <nav>
@@ -32,14 +33,7 @@
 
                     <div class="nav-inner-cont nav-right right">
                         <div class="log-in menu-item-right">
-								<div>
-			<form action="/doLogin">
-				username:<input name='username'/><br>
-				password:<input name='password' type='password' />
-                            <a href="javascript:document.forms[0].submit()" class="button">Login</a>
-			</form>
-				</div>
-
+                            <a href="#" class="button">Login</a>
                         </div>
                         <div class="sign-up menu-item-right">
                             <a href="#" class="button">Sign up</a>
@@ -48,6 +42,7 @@
                 </div>
             </div>
         </nav>
+        </div>
     </header>
 
     <main>
@@ -57,6 +52,14 @@
             <h4>Building Knowledge in the Digital Age</h4>
           </div>
           <div class="deck-container Info-Description">
+              <div class="decks"> Computer Science <p>Sample decks w/ link</p>
+              </div>
+              <div class="decks"> Biology <p>Sample decks w/ link</p>
+              </div>
+              <div class="decks"> Computer Science <p>Sample decks w/ link</p>
+              </div>
+              <div class="decks"> Biology <p>Sample decks w/ link</p>
+              </div>
               <div class="decks"> Computer Science <p>Sample decks w/ link</p>
               </div>
               <div class="decks"> Biology <p>Sample decks w/ link</p>
