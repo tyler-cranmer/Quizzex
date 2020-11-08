@@ -46,10 +46,10 @@ Test steps
 Expected result
   User should remain on Signinpage with a failed login message displayed
 Actual result
-  TO DO!
+  User remains on the Signinpage with a red failed long message displayed
 Status (Pass/Fail)
-  TO DO!
+  Pass
 Notes
-  N/A
+  Works for both invalid username OR password
 Post-conditions
-  TO DO!
+  No session details should be logged.  User may reattempt login as normal.
