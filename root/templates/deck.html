@@ -11,6 +11,10 @@
   <div id="main" name="main">
     <h1>Create New Deck</h1>
 
+    {% if failedSaveMessage %}
+      <p id="failedSaveText">{{ failedSaveMessage }}</p>
+    {% endif %}
+
     <form action="/addNewDeck">
       <label for="deck-name">Deck Name: </label>
       <input type="text" id="deck-name" name="deck-name" required><br><br>
