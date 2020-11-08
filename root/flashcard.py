@@ -104,3 +104,8 @@ def goToLibrary():
 @app.route('/signIn')
 def goToSignIn():
     return render_template('Signinpage.html')
+
+# Navigates to SignUp.html
+@app.route('/signUp')
+def goToSignUp():
+    return render_template('SignUp.html')
