@@ -69,3 +69,7 @@ def addnewDeck():
 @app.route('/library')
 def goToLibrary():
     return render_template('user-library.html')
+
+@app.route('/signIn')
+def goToSignIn():
+    return render_template('Signinpage.html')
