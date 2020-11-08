@@ -1,5 +1,4 @@
 import unittest
-import mysql.connector
 import helper_functions
 from helper_functions import *
 
