@@ -15,7 +15,7 @@ $('#description').on('input', function() {
   - name: name of the Deck
   - description: description of the deck
   - category: deck category for folder organization
-  - isPublic: sets public option for public/private decks
+  - public-checkbox: sets public option for public/private decks
  */
 function save() {
     document.forms[0].submit();
