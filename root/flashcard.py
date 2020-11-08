@@ -3,9 +3,14 @@ from flask import request
 from flask import render_template
 from flask import session
 import mysql.connector
+import secrets
 
 
 app = Flask(__name__)
+
+# Set secret key
+# REQUIRED for session to work to track username through website
+app.config["SECRET_KEY"] = secrets.token_urlsafe(16)
 
 
 
