@@ -69,7 +69,7 @@ def dologin():
         session['username'] = username
         return render_template('user-library.html', username=session['username'])
     else:
-        return render_template('invalidLogin.html')
+        return render_template('Signinpage.html', failedLoginMessage="Failed login: please try again with a valid username and password.")
 
 # Navigates to create-new-card.html
 @app.route('/createCard')

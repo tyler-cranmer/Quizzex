@@ -28,6 +28,8 @@
                     <h1 class = "content_heading">Welcome Back</h1>
                     <p class = "content_subheading">Come Expand your Horizon</p>
                 </div>
+                {% if failedLoginMessage %}
+                  <p id="failedLoginText">{{ failedLoginMessage }}</p>
                 <div class = "login_container">
                       <form id="loginForm" method="get" class="form_login" action="/doLogin">
                         <div class="form_login">
