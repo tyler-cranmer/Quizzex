@@ -97,12 +97,12 @@ def addNewDeck():
     description=request.args.get('description', None)
     category=request.args.get('category', None)
     isPublic=request.args.get('public-checkbox', None)
-    if(isPublic and name and description and category):
+    if(name and description and category):
         # NEED TO ADD CODE TO SUBMIT DECK TO DATABASE HERE!
         return goToLibrary()
-    elif(not isPublic and name and description and category):
+    #elif(not isPublic and name and description and category):
         # NEED TO ADD CODE TO SUBMIT DECK TO DATABASE HERE!
-        return goToLibrary()
+        #return goToLibrary()
     else:
         return render_template('deck.html', failedSaveMessage="Please fill out all fields before saving.")
 
