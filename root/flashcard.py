@@ -48,7 +48,8 @@ def dologin():
     password=request.args.get('password', None)
     valid = login(username,password)
     if (valid == True):
-        return render_template('user-library.html', username=username)
+        session['username'] = username
+        return render_template('user-library.html', username=session['username'])
     else:
         return render_template('invalidLogin.html')
 
