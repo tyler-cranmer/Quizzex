@@ -104,7 +104,7 @@ def addNewDeck():
         # NEED TO ADD CODE TO SUBMIT DECK TO DATABASE HERE!
         return goToLibrary()
     else:
-        return goToLibrary(failedSaveMessage="Please fill out all fields before saving.")
+        return render_template('deck.html', failedSaveMessage="Please fill out all fields before saving.")
 
 # Returns user to their personal library page
 @app.route('/library')
