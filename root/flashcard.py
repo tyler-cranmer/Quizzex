@@ -93,16 +93,16 @@ def goToCreateDeck():
 def addNewDeck():
     # Function will be run when the save button is pressed and form is submitted for
     # deck.html page
-    name=request.args.get('name', None)
+    name=request.args.get('deck-name', None)
     description=request.args.get('description', None)
-    category=request.args.get('category', None)
+    category=request.args.get('category-select', None)
     isPublic=request.args.get('public-checkbox', None)
-    if(isPublic and name and description and category):
+    if(name and description and category):
         # NEED TO ADD CODE TO SUBMIT DECK TO DATABASE HERE!
         return goToLibrary()
-    elif(not isPublic and name and description and category):
+    #elif(not isPublic and name and description and category):
         # NEED TO ADD CODE TO SUBMIT DECK TO DATABASE HERE!
-        return goToLibrary()
+        #return goToLibrary()
     else:
         return render_template('deck.html', failedSaveMessage="Please fill out all fields before saving.")
 

@@ -17,6 +17,7 @@ class TestHelperFunctions(unittest.TestCase):
 
     # Unit Tests below here
 
+<<<<<<< HEAD
     def test_get_user_info_from_database(self):
         self.assertEqual((1,'Allie','Password123','allie@gmail.com'),get_user('Allie'))
 
@@ -27,6 +28,11 @@ class TestHelperFunctions(unittest.TestCase):
     #def testEqual(self):
     #    self.assertEqual(1, 3-1)
     
+=======
+    def get_user_info_from_database(self):
+        get_user('Allie')
+        self.assertEqual((1, 'Allie', 'Password123', 'allie@gmail.com'))
+>>>>>>> 2156cb4cfae211fd568a1f82836a82153f1600fe
 
 if __name__ == '__main__':
     unittest.main()
