@@ -1,5 +1,4 @@
 import mysql.connector
-from tabulate import tabulate
 
 #to run this code you may need to install using the following: 
 # pip install mysql-connector-python
@@ -17,17 +16,22 @@ mydb=connect_db()
 mycursor = mydb.cursor(buffered=True)
 mycursor.execute("use flashcards")
 
-
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #functions to CREATE entries
 
 #function to call to add a new user to the user table when they create account
 def add_user(new_username, new_password, new_email):
     id = mycursor.lastrowid
-    sql = "INSERT INTO users (username, password, email) VALUES (%s, %s, %s)"
-    val = (new_username, new_password, new_email)
-    mycursor.execute(sql, val)
-    mydb.commit()
-    print(mycursor.rowcount, "record inserted.")
+    #check that the username does not already exist
+    if(get_user(new_username)!= None):
+        return("This username is already taken")
+    else:
+        sql = "INSERT INTO users (username, password, email) VALUES (%s, %s, %s)"
+        val = (new_username, new_password, new_email)
+        mycursor.execute(sql, val)
+        mydb.commit()
+        print(mycursor.rowcount, "record inserted.")
+        return mycursor.lastrowid
 
 #function to call when user creates a new deck to add into database (will use a session variable to pass in username)
 def add_deck(username, public, deckname, category):
@@ -50,7 +54,7 @@ def add_card(deckID, cardFront, cardBack):
 
 
 
-
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #functions to READ/retrieve data from database
 
 #function to get user info from database
@@ -68,6 +72,18 @@ def get_user(username):
 
 
 
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#function to REMOVE/delete an entry from the database
 
 
+#function to remove a user
+def remove_user(username):
+    if (get_user(username) == None):
+        return("This user does not exist")
+    else:
+        sql = "delete FROM users WHERE username = %s"
+        val=(username, )
+        mycursor.execute(sql,val)
+        mydb.commit()
+        return("User Deleted")
 
