@@ -11,6 +11,10 @@
   <div id="main" name="main">
     <h1>Create Flashcard</h1>
 
+    {% if failedSaveMessage %}
+      <p id="failedSaveText">{{ failedSaveMessage }}</p>
+    {% endif %}
+
     <form action="/addNewCard">
       <label for="deck-select">Choose a Deck:</label>
       <select id="deck-select" name="deck-select">

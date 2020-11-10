@@ -81,7 +81,14 @@ def goToCreateCard():
 def addNewCard():
     # Function will be run when the save button is pressed and form is submitted for
     # create-new-card.html page
-    return goToLibrary()
+    deck = request.args.get('deck-select', None)
+    front = request.args.get('front-text', None)
+    back = request.args.get('back-text', None)
+    if(deck and front and back):
+        # NEED TO ADD CODE TO SUBMIT CARD TO DATABASE HERE!
+        return goToLibrary()
+    else:
+        return render_template('create-new-card.html', failedSaveMessage="Please fill out all fields before saving.")
 
 # Navigates to deck.html page
 @app.route('/createDeck')
