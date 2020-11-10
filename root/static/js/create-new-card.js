@@ -38,6 +38,6 @@ function save() {
 function back() {
   var res = confirm("Your new flashcard has not been saved.  Are you sure you would like to go back?");
   if (res) {
-    window.location.href = '../templates/user-library.html';
+    window.location.href = '/library';
   }
 }
