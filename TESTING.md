@@ -3,7 +3,7 @@ Allie Bernstein, Samuel Terry, Tyler Cranmer, Benjamin Price
 
 Automated Test Cases: Explain how to run the test cases and the expected output. The instructor should be able to clone your repository and replicate your test results. You should have at least three automated tests.
 
-To run the unittests, please make sure to have the mysql.connector python library installed.  Navigate to the outer-most directory of the project and run the unittests.py file using either 'python unittests.py' or 'python3 unittests.py'.
+To run the unittests, please make sure to have the mysql.connector python library installed (can use the command pip install mysql-connector-python).  Navigate to the outer-most directory of the project and run the unittests.py file using either 'python unittests.py' or 'python3 unittests.py'.
 
 User Acceptance Testing The purpose of these tests is to have a formatted plan that you could provide to users to go through the steps in using your application and report whether it was successful or not.
 
