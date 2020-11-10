@@ -18,7 +18,7 @@ app.config["SECRET_KEY"] = secrets.token_urlsafe(16)
 mydb = mysql.connector.connect(
     host="35.223.161.145",
     user="root",
-    password=""
+    password="Allie2207"
     )
 
 mycursor = mydb.cursor()
