@@ -26,9 +26,6 @@ $('#back-text').on('input', function() {
   - back-text: text for back of card
 */
 function save() {
-  var front = document.forms[0].elements[1].value;
-  var back = document.forms[0].elements[2].value;
-  alert("Front: " + front + "\nBack: " + back);
   document.forms[0].submit();
 }
 
@@ -38,6 +35,6 @@ function save() {
 function back() {
   var res = confirm("Your new flashcard has not been saved.  Are you sure you would like to go back?");
   if (res) {
-    window.location.href = '../templates/user-library.html';
+    window.location.href = '/library';
   }
 }
