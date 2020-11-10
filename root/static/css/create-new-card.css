@@ -76,3 +76,7 @@ input {
   float: right;
   margin-right: 10px;
 }
+
+#failedSaveText {
+  color: red;
+}
