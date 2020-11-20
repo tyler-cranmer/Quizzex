@@ -4,7 +4,7 @@ from flask import render_template
 from flask import session
 import mysql.connector
 import secrets
-import helper_functions
+from helper_functions import *
 
 app = Flask(__name__)
 
@@ -107,10 +107,14 @@ def addNewDeck():
     if(isPublic and name and description and category):
         # NEED TO ADD CODE TO SUBMIT DECK TO DATABASE HERE!
         # THIS IS FOR PUBLIC DECKS ONLY!!!
+        username = session['username']
+        add_deck(username,1, name, category)
         return goToLibrary()
     elif(name and description and category):
         # NEED TO ADD CODE TO SUBMIT DECK TO DATABASE HERE!
         # THIS IS FOR PRIVATE DECKS ONLY!!!
+        username = session['username']
+        add_deck(username,0, name, category)        
         return goToLibrary()
     else:
         return render_template('deck.html', failedSaveMessage="Please fill out all fields before saving.")
