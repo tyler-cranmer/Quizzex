@@ -4,7 +4,7 @@ from flask import render_template
 from flask import session
 import mysql.connector
 import secrets
-
+import helper_functions
 
 app = Flask(__name__)
 
