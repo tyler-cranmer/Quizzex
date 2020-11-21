@@ -16,6 +16,7 @@ mydb=connect_db()
 mycursor = mydb.cursor(buffered=True)
 mycursor.execute("use flashcards")
 
+
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #functions to CREATE entries
 
