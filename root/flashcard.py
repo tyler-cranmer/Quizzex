@@ -175,4 +175,5 @@ def goToSignUp():
 def doDeckOpenOrDelete():
     deckname = request.args.get('deckname', None)
     if(request.args.get('delete', None)):
-        return print("Delete was selected for" + deckname)
+        return "Delete was selected for" + deckname
+    return
