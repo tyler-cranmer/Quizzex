@@ -20,18 +20,27 @@ mycursor.execute("use flashcards")
 #functions to CREATE entries
 
 #function to call to add a new user to the user table when they create account
-def add_user(new_username, new_password, new_email):
+def add_user(new_username, new_password, confirm_password, new_email):
     id = mycursor.lastrowid
-    #check that the username does not already exist
+
+    #check that the username does not already exist; if not, return an error message
     if(get_user(new_username)!= None):
-        return("This username is already taken")
+        return("Sorry, this username is already taken.")
+
+    # Confirm that the two password inputs match; if not, return an error message
+    if (new_password != confirm_password):
+        return("Passwords don't match, please try again.")
+
     else:
         sql = "INSERT INTO decks (username, password, email) VALUES (%s, %s, %s)"
         val = (new_username, new_password, new_email)
         mycursor.execute(sql, val)
         mydb.commit()
-        print(mycursor.rowcount, "record inserted.")
-        return mycursor.lastrowid
+        #print(mycursor.rowcount, "record inserted.")
+        #return mycursor.lastrowid
+
+        # If everything checks out, return a successful status message
+        return "Success!"
 
 #function to call when user creates a new deck to add into database (will use a session variable to pass in username)
 def add_deck(username, public, deckname, category):
