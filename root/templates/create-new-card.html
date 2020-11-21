@@ -19,7 +19,7 @@
       <label for="deck-select">Choose a Deck:</label>
       {% if decks %}
         <select id="deck-select" name="deck-select">
-          {{ options }}
+          {{ options|safe }}
         </select>
       {% else %}
         <input name="deck-select" type="text"/>
