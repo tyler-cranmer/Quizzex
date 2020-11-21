@@ -106,3 +106,11 @@ def remove_user(username):
         mycursor.execute(sql,val)
         mydb.commit()
         return("User Deleted")
+
+#function to remove a deck
+def remove_deck(username, deckname):
+    sql = "DELETE FROM decks WHERE username = %s AND deckname = %s"
+    val=(username, deckname)
+    mycursor.execute(sql,val)
+    mydb.commit()
+    return("Deck Deleted")
