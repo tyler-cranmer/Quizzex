@@ -151,7 +151,7 @@ def goToLibrary():
     for deck in user_decks:
         deck_html = deck_html + "<p>" + deck[0] + "</p>"
         deck_count = deck_count + 1
-    return render_template('user-library.html', username=user, decks = deck_html, num_decks = deck_count)
+    return render_template('user-library.html', username=user, decks = deck_html, numdecks = deck_count)
 
 # Navigates to Signinpage.html
 @app.route('/signIn')
