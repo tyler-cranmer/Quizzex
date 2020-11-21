@@ -149,8 +149,8 @@ def goToLibrary():
     deck_html = ""
     deck_count = 0
     for deck in user_decks:
-        deck_html = (deck_html + '<form action="/goToDeck"><h2>' + deck[0] + '</h2>'+
-            '<input name="open" class="deck_button" type="submit" value="Open"></form>' +
+        deck_html = (deck_html + '<form action="/doDeckOpenOrDelete"><h2>' + deck[0] + '</h2>'+
+            '<input name="open" class="deck_button" type="submit" value="Open">' +
             '<input name="delete" class="deck_button" type="submit" value="Delete"></form>')
         deck_count = deck_count + 1
     return render_template('user-library.html', username=user, decks = deck_html, numdecks = deck_count)
