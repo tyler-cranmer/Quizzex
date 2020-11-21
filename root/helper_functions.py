@@ -32,7 +32,7 @@ def add_user(new_username, new_password, confirm_password, new_email):
         return("Passwords don't match, please try again.")
 
     else:
-        sql = "INSERT INTO decks (username, password, email) VALUES (%s, %s, %s)"
+        sql = "INSERT INTO users (username, password, email) VALUES (%s, %s, %s)"
         val = (new_username, new_password, new_email)
         mycursor.execute(sql, val)
         mydb.commit()
@@ -41,6 +41,7 @@ def add_user(new_username, new_password, confirm_password, new_email):
 
         # If everything checks out, return a successful status message
         return "Success!"
+
 
 #function to call when user creates a new deck to add into database (will use a session variable to pass in username)
 def add_deck(username, public, deckname, category):
@@ -95,4 +96,3 @@ def remove_user(username):
         mycursor.execute(sql,val)
         mydb.commit()
         return("User Deleted")
-
