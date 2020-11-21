@@ -145,7 +145,7 @@ def addNewDeck():
 @app.route('/library')
 def goToLibrary():
     user = session['username']
-    user_decks = helper_functions.get_decks(user)
+    user_decks = get_decks(user)
     return render_template('user-library.html', username=user, decks = user_decks)
 
 # Navigates to Signinpage.html
