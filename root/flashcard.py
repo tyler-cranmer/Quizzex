@@ -84,10 +84,10 @@ def doSignup():
     status = add_user(username, password1, password2, email)
 
     # Check status message
-    # If valid, render the 'user-library' template and pass the session variable as a keyword argument
+    # If valid, update the username session property and perform goToLibrary
     if status == "Success!":
         session['username'] = username
-        return render_template('user-library.html', username=session['username'])
+        return goToLibrary()
 
     # If invalid, render the 'SignUp' template (again) and pass the error message as a keyword argument
     else:
