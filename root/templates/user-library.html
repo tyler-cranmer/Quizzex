@@ -27,7 +27,7 @@
   </div>
   <div id="deck-list" name="deck-list">
     {% if decks %}
-      {{ decks }}
+      {{ decks|safe }}
     {% else %}
       <p>Click the "Create New Deck" button below to get started!</p>
     {% endif %}
