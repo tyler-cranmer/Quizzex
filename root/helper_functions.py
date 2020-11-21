@@ -1,6 +1,6 @@
 import mysql.connector
 
-#to run this code you may need to install using the following: 
+#to run this code you may need to install using the following:
 # pip install mysql-connector-python
 # pip install tabulate
 
@@ -79,7 +79,16 @@ def get_user(username):
     else:
         return myresult[0]
 
-
+#function to get decks for a user from DATABASE
+def get_decks(username):
+    sql = "SELECT deckname FROM decks WHERE user = %s"
+    val = (username, )
+    mycursor.execute(sql, val)
+    myresult = mycursor.fetchall()
+    if len(myresult) == 0:
+        return None
+    else:
+        return myresult
 
 
 

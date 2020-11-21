@@ -85,14 +85,14 @@ def doSignup():
 
     # Check status message
     # If valid, render the 'user-library' template and pass the session variable as a keyword argument
-    if status == "Success!": 
+    if status == "Success!":
         session['username'] = username
         return render_template('user-library.html', username=session['username'])
-    
+
     # If invalid, render the 'SignUp' template (again) and pass the error message as a keyword argument
     else:
         return render_template('SignUp.html', signupFailureError=status)
-    
+
 # Navigates to create-new-card.html
 @app.route('/createCard')
 def goToCreateCard():
@@ -136,7 +136,7 @@ def addNewDeck():
         # NEED TO ADD CODE TO SUBMIT DECK TO DATABASE HERE!
         # THIS IS FOR PRIVATE DECKS ONLY!!!
         username = session['username']
-        add_deck(username,0, name, category)        
+        add_deck(username,0, name, category)
         return goToLibrary()
     else:
         return render_template('deck.html', failedSaveMessage="Please fill out all fields before saving.")
@@ -144,7 +144,9 @@ def addNewDeck():
 # Returns user to their personal library page
 @app.route('/library')
 def goToLibrary():
-    return render_template('user-library.html', username=session['username'])
+    user = session['username']
+    user_decks = helper_functions.get_decks(user)
+    return render_template('user-library.html', username=user, decks = user_decks)
 
 # Navigates to Signinpage.html
 @app.route('/signIn')
