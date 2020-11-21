@@ -59,7 +59,7 @@ def mysite():
 
 # Validates the entered username and password
 # If valid, sets session variables and goes to user's library page
-# TODO: If invalid, returns to login page and display failed message
+# If invalid, returns to login page and display failed message
 @app.route('/doLogin')
 def dologin():
     username=request.args.get('username', None)
@@ -71,6 +71,28 @@ def dologin():
     else:
         return render_template('Signinpage.html', failedLoginMessage="Failed login: please try again with a valid username and password.")
 
+# Validates the entered username and password
+# If valid, sets session variables and goes to user's library page
+# If invalid, returns to signup page and displays error message
+@app.route('/doSignup')
+def doSignup():
+    username = request.args.get('username', None)
+    password1 = request.args.get('password1', None)
+    password2 = request.args.get('password2', None)
+    email = request.args.get('email', None)
+
+    status = add_user(username, password1, password2, email)
+
+    # Check status message
+    # If valid, render the 'user-library' template and pass the session variable as a keyword argument
+    if status == "Success!": 
+        session['username'] = username
+        return render_template('user-library.html', username=session['username'])
+    
+    # If invalid, render the 'SignUp' template (again) and pass the error message as a keyword argument
+    else:
+        return render_template('SignUp.html', signupFailureError=status)
+    
 # Navigates to create-new-card.html
 @app.route('/createCard')
 def goToCreateCard():
