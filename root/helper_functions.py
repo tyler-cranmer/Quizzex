@@ -81,7 +81,7 @@ def get_user(username):
 
 #function to get decks for a user from DATABASE
 def get_decks(username):
-    sql = "SELECT deckname FROM decks WHERE user = %s"
+    sql = "SELECT deckname FROM decks WHERE username = %s"
     val = (username, )
     mycursor.execute(sql, val)
     myresult = mycursor.fetchall()
