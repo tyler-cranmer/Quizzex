@@ -154,7 +154,7 @@ def goToLibrary():
         deck_html = ""
         for deck in user_decks:
             deck_html = (deck_html + '<form action="/doDeckOpenOrDelete"><h2 class="deck">' + deck[0] + '</h2>'+
-                '<input type="hidden" name="deckname" value=' + deck[0] + '/>' +
+                '<input type="hidden" name="deckname" value="' + deck[0] + '"/>' +
                 '<input name="open" class="deck_button" type="submit" value="Open">' +
                 '<input name="delete" class="deck_button" type="submit" value="Delete"></form>')
             deck_count = deck_count + 1
