@@ -94,7 +94,7 @@ def doSignup():
         return render_template('SignUp.html', signupFailureError=status)
 
 # Navigates to create-new-card.html
-@app.route('/createCard')
+@app.route('/goToCreateCard')
 def goToCreateCard():
     return render_template('create-new-card.html')
 
@@ -113,7 +113,7 @@ def addNewCard():
         return render_template('create-new-card.html', failedSaveMessage="Please fill out all fields before saving.")
 
 # Navigates to deck.html page
-@app.route('/createDeck')
+@app.route('/goToCreateDeck')
 def goToCreateDeck():
     return render_template('deck.html')
 
