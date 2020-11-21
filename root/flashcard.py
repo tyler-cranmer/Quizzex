@@ -67,7 +67,7 @@ def dologin():
     valid = login(username,password)
     if (valid == True):
         session['username'] = username
-        return render_template('user-library.html', username=session['username'])
+        return goToLibrary()
     else:
         return render_template('Signinpage.html', failedLoginMessage="Failed login: please try again with a valid username and password.")
 
