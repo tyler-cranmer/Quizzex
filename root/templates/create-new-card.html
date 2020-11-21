@@ -17,16 +17,18 @@
 
     <form action="/addNewCard">
       <label for="deck-select">Choose a Deck:</label>
-      <select id="deck-select" name="deck-select">
-        {% if options %}
-          <option>{{ options }}</option>
-        {% else %}
+      {% if decks %}
+        <select id="deck-select" name="deck-select">
+          {{ options }}
+        </select>
+      {% else %}
+        <input name="deck-select" type="text"/>
+      <!--
           <option value="history">History</option>
           <option value="algebra">Algebra</option>
           <option value="spanish">Spanish</option>
-          <option value="softwareDev">Software Dev Tools and Methods</option>
-        {% endif %}
-      </select>
+        -->
+      {% endif %}
       <br>
       <br>
 

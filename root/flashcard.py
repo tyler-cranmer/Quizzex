@@ -96,7 +96,15 @@ def doSignup():
 # Navigates to create-new-card.html
 @app.route('/goToCreateCard')
 def goToCreateCard():
-    return render_template('create-new-card.html')
+    user = session['username']
+    # retrieve a list of decks from database in the form [("deckName1",),("deckName2",),...]
+    user_decks = get_decks(user)
+    deck_html = None
+    if(user_decks):
+        deck_html = ""
+        for deck in user_decks:
+            deck_html = (deck_html + '<option value="' + deck[0] + '">' + deck[0] + '</option>')
+    return render_template('create-new-card.html', decks=deck_html)
 
 # Adds a new card to the database and returns to user library
 @app.route('/addNewCard')
