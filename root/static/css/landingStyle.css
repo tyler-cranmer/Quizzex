@@ -1,12 +1,13 @@
 /* Header*/
 
 header{
-  height: 69px;
+  height: 80px;
   width: 100%;
   border-bottom: 1px solid seashell;
   position: fixed;
   z-index: 1;
   align-items: center;
+
 }
 
 .header-inner{
@@ -97,7 +98,7 @@ h2,
 h3,
 h4{
     margin:0;
-    padding: 10px;
+    padding: 6px;
 }
 
 .deck-container{
@@ -152,6 +153,8 @@ border-image: initial;
   border-radius: 4px;
   text-decoration: none;
   cursor: pointer;
+  line-height:18px;
+
 }
 
 .log-in .button {
@@ -159,11 +162,12 @@ border: 1px #0062cc;
 font-size: 13px;
 font-weight: bold;
 padding: 7px 30px;
-background: transparent;
-color: #0062cc;
+background:transparent;
+color:#0062cc;
 border-radius: 4px;
 text-decoration: none;
 cursor: pointer;
+line-height:18px;
 }
 
 
