@@ -1,3 +1,3 @@
 $(document).ready(function() {
-  $(".deck".fadeIn("slow");
+  $(".deck").fadeIn("slow");
 });
