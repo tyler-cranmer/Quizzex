@@ -53,7 +53,9 @@ form {
 }
 
 img {
-  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  display: block;
 }
 
 .hidden {
