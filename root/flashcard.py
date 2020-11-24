@@ -195,12 +195,12 @@ def doDeckFunction():
         deckname = request.form.get('deckname')
         if(request.form.get('delete')):
             return "Delete was selected for " + deckname + " deck."
-        #elif(request.form['study']):
-        #    return goToStudy(deckname)
-        #elif(request.form['edit']):
-        #    return "Edit was selected for " + deckname + " deck."
-        #else:
-        #    return "Error: Neither edit, delete, nor study was selected for " + deckname + " deck."
+        elif(request.form['study']):
+            return goToStudy(deckname)
+        elif(request.form['edit']):
+            return "Edit was selected for " + deckname + " deck."
+        else:
+            return "Error: Neither edit, delete, nor study was selected for " + deckname + " deck."
     else:
         return "Post request was not performed or another error occurred."
 
