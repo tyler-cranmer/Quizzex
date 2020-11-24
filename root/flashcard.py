@@ -199,7 +199,7 @@ def doDeckFunction():
             return "Delete was selected for " + deckname + " deck."
         elif(request.form.get('study', None)):
             return goToStudy(deckname)
-        elif(request.form.get('edit', None)):
+        elif(request.form.get('edit.x', None)):
             return "Edit was selected for " + deckname + " deck."
         else:
             return "Error: Neither edit, delete, nor study was selected for " + deckname + " deck."
