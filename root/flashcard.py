@@ -176,13 +176,13 @@ def goToLibrary():
                 '<input name="deckname" type="hidden" value="' + deck[0] + '"/>' +
                 '<input name="study" class="deck" type="submit" value="' + deck[0] + '"/>' +
                 '</form>' +
-                '<form method="POST" action="/doDeckFunction" class="" display="inline">' +
+                '<form method="POST" action="/doDeckFunction" class="deck_button_img">' +
                 '<input name="deckname" type="hidden" value="' + deck[0] + '"/>' +
-                '<input name="edit" class="deck_button_img" type="image" src="static/img/editIcon.jpg" alt="Edit"/>' +
+                '<input name="edit" class="" type="image" src="static/img/editIcon.jpg" alt="Edit"/>' +
                 '</form>' +
-                '<form method="POST" action="/doDeckFunction" class="delete_btn" display="inline">' +
+                '<form method="POST" action="/doDeckFunction" class="delete_btn deck_button_img">' +
                 '<input name="deckname" type="hidden" value="' + deck[0] + '"/>' +
-                '<img name="delete" class="deck_button_img" src="static/img/trashcan.png" alt="Delete">' +
+                '<img name="delete" class="" src="static/img/trashcan.png" alt="Delete">' +
                 '</form><br>' +
                 '</div>')
             deck_count = deck_count + 1

@@ -37,11 +37,15 @@ h1 {
 }
 
 .deck_button_img {
+  margin-right: 10px;
+  display: inline;
+}
+
+.deck_button_img img {
   width: 16px;
   height: 16px;
-  margin-right: 10px;
 }
 
 .delete_btn:hover {
-  border: 5px solid black;
+  border: 1px solid black;
 }
