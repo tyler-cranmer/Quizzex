@@ -8,7 +8,7 @@ body {
   color: var(--main-text-color);
 }
 
-/* Header from Tyler */
+/* Header from Tyler
 
 header{
     height: 69px;
@@ -40,14 +40,14 @@ header{
   }
 
 
-  /*Location*/
+  /*Location
 
   .container.locations{
     padding-top: 5px;
   }
 
 
-  /* HEADER NAVIGATION STYLE */
+  /* HEADER NAVIGATION STYLE 
 
   .nav-right {
   width: calc(100% - 25rem);
@@ -67,3 +67,4 @@ header{
   .menu-item-right {
         margin: 0 10px;
   }
+  */
