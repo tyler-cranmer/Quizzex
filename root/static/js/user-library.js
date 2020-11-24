@@ -1,3 +1,3 @@
-$(".deck").onload = function() {
+$(document).ready(function() {
   $(".deck").fadeIin("slow");
 };
