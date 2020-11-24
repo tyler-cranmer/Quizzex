@@ -202,7 +202,7 @@ def doDeckFunction():
         #else:
         #    return "Error: Neither edit, delete, nor study was selected for " + deckname + " deck."
     else:
-        return
+        return "Post request was not performed or another error occurred."
 
 @app.route('/study')
 def goToStudy(deck):
