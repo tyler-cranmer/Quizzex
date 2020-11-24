@@ -8,6 +8,10 @@ body {
   color: var(--main-text-color);
 }
 
+h2 {
+  display: inline;
+}
+
 #logo {
   font-family: "Barrio";
   display: inline;
