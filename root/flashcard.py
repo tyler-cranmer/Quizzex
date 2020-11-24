@@ -196,7 +196,7 @@ def doDeckFunction():
     if(request.method == 'POST'):
         deckname = request.form.get('deckname', None)
         if(request.form.get('delete.x', None)):
-            return "Delete was selected for " + deckname + " deck."
+            return deleteDeck(deckname)
         elif(request.form.get('study', None)):
             return goToStudy(deckname)
         elif(request.form.get('edit.x', None)):
@@ -209,3 +209,10 @@ def doDeckFunction():
 @app.route('/study')
 def goToStudy(deck):
     return render_template('study_card.html', deckname=deck)
+
+@app.route('/DeleteDeck')
+def deleteDeck(deck):
+    user = session['username']
+    remove_deck(user, deck)
+    return goToLibrary()
+
