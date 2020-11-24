@@ -171,7 +171,7 @@ def goToLibrary():
         deck_html = ""
         for deck in user_decks:
             deck_html = (deck_html +
-                '<form method="POST" action="/doDeckFunction">' +
+                '<form method="POST" action="/doDeckFunction" class="deckForm">' +
                 '<input name="deckname" type="hidden" value="' + deck[0] + '"/>' +
                 '<input name="study" class="deck" type="submit" value="' + deck[0] + '"/>' +
                 '<input name="edit" class="deck_button_img" type="image" src="static/img/editIcon.jpg" alt="Submit">' +
