@@ -192,7 +192,7 @@ def goToSignUp():
 @app.route('/doDeckFunction')
 def doDeckFunction():
     deckname = request.form['deckname']
-    if(request.form[]'delete']):
+    if(request.form['delete']):
         return "Delete was selected for " + deckname + " deck."
     elif(request.form['study']):
         return goToStudy(deckname)
