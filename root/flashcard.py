@@ -192,12 +192,12 @@ def goToSignUp():
 @app.route('/doDeckFunction', methods=['GET', 'POST'])
 def doDeckFunction():
     if(request.method == 'POST'):
-        deckname = request.form.get('deckname')
-        if(request.form.get('delete')):
+        deckname = request.form.get('deckname', None)
+        if(request.form.get('delete', None)):
             return "Delete was selected for " + deckname + " deck."
-        elif(request.form['study']):
+        elif(request.form.get('study', None)):
             return goToStudy(deckname)
-        elif(request.form['edit']):
+        elif(request.form.get('edit', None)):
             return "Edit was selected for " + deckname + " deck."
         else:
             return "Error: Neither edit, delete, nor study was selected for " + deckname + " deck."
