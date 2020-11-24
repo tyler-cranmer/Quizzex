@@ -9,9 +9,19 @@ body {
   color: var(--main-text-color);
 }
 
+#logo {
+  font-family: "Barrio";
+  display: inline;
+}
+
 h1 {
   font-size: 36pt;
   margin-top: 20px;
+}
+
+form {
+  display: inline;
+  padding: 0px;
 }
 
 .deckForm {
@@ -31,19 +41,15 @@ h1 {
   background-color: var(--secondary-background-color);
 }
 
-#logo {
-  font-family: "Barrio";
-  display: inline;
-}
-
 .deck_button_img {
+  width: 16px;
+  height: 16px;
   margin-right: 10px;
   display: inline;
 }
 
 .deck_button_img img {
-  width: 16px;
-  height: 16px;
+  display: inline;
 }
 
 .delete_btn:hover {
