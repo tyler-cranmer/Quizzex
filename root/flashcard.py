@@ -170,7 +170,7 @@ def goToLibrary():
     if(user_decks):
         deck_html = ""
         for deck in user_decks:
-            deck_html = (deck_html + '<form action="/doDeckFunction"><h2 class="deck">' + deck[0] + '</h2>'+
+            deck_html = (deck_html + '<form action="/doDeckFunction"><h2 class="deck" method="post">' + deck[0] + '</h2>'+
                 '<input type="hidden" name="deckname" value="' + deck[0] + '"/>' +
                 '<input name="study" class="deck_button" type="submit" value="Study">' +
                 '<input name="edit" class="deck_button" type="submit" value="Edit">' +
@@ -191,12 +191,12 @@ def goToSignUp():
 # Performs either delete or open from a deck form submitted on the user library page
 @app.route('/doDeckFunction')
 def doDeckFunction():
-    deckname = request.args.get('deckname', None)
-    if(request.args.get('delete', None)):
+    deckname = request.form('deckname')
+    if(request.form('delete')):
         return "Delete was selected for " + deckname + " deck."
-    elif(request.args.get('study', None)):
+    elif(request.form('study')):
         return goToStudy(deckname)
-    elif(request.args.get('edit', None)):
+    elif(request.form('edit')):
         return "Edit was selected for " + deckname + " deck."
     else:
         return "Error: Neither edit, delete, nor study was selected for " + deckname + " deck."
