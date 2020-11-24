@@ -20,14 +20,3 @@ $('#description').on('input', function() {
 function save() {
     document.forms[0].submit();
 }
-
-/*
-  back() is run when the back button is clicked on the page
-  Should navigate back to the library page for the specific user
-*/
-function back() {
-  var res = confirm("Your new deck has not been saved.  Are you sure you would like to go back?");
-  if (res) {
-    window.location.href = '/library';
-  }
-}
