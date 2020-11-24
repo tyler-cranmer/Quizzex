@@ -28,13 +28,3 @@ $('#back-text').on('input', function() {
 function save() {
   document.forms[0].submit();
 }
-
-/*
-  back() displays warning message and navigates back to the user library if user accepts
-*/
-function back() {
-  var res = confirm("Your new flashcard has not been saved.  Are you sure you would like to go back?");
-  if (res) {
-    window.location.href = '/library';
-  }
-}
