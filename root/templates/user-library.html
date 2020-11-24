@@ -22,9 +22,16 @@
       <li class="nav-item">
         <a class="nav-link" href="/goToCreateDeck">Create Deck</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/goToCreateCard">Create Card</a>
-      </li>
+      {% if numdecks %}
+        {% if numdecks > 0 %}
+          <li class="nav-item">
+            <a class="nav-link" href="/goToCreateCard">Create Card</a>
+          </li>
+        {% endif %}
+      {% else %}
+        <li class="nav-item">
+          <a class="nav-link disabled" href="/goToCreateCard">Create Card</a>
+        </li>
       <!-- Example of disabled link
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
@@ -72,12 +79,14 @@
   <br>
   <br>
 
+  <!-- Possible Folder Creation Section
   <a href="">Create Folder</a>
   <div id="folder-list" name="folder-list">
     {% if folders %}
       {{ folders }}
     {% endif %}
   </div>
+  -->
 
   <script type="text/javascript" src="../static/js/user-library.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
