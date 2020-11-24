@@ -8,6 +8,36 @@
 </head>
 
 <body>
+  <!-- Header created by Tyler -->
+  <header class="bg-white d-flex">
+      <div class="container d-flex header-inner">
+      <div class="logo">
+          <img src="https://raw.githubusercontent.com/RegExTeam/projectRegEx/master/root/static/img/aspire_flashcards_icon.png"/>
+          <div></div>
+      </div>
+      <nav>
+          <div class="container nav-inner">
+              <div class="menu nav">
+                  <div class="nav-inner-cont nav-left left">
+                      <div class="search"></div>
+                  </div>
+
+                  <div class="nav-inner-cont nav-right right">
+                      <div class="log-in menu-item-right">
+                          <!-- <a href="#" class="button">Login</a> -->
+                      </div>
+                      <div class="sign-up menu-item-right">
+                          <a href="/library" class="button">Profile</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </nav>
+      </div>
+  </header>
+
+  <!-- Main Body of the Library page -->
+
   <div id="user-info" name="user-info">
     {% if username %}
       <h1>{{ username }}'s Profile</h2>

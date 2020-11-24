@@ -7,3 +7,63 @@ body {
   background-color: var(--main-background-color);
   color: var(--main-text-color);
 }
+
+/* Header from Tyler */
+
+header{
+    height: 69px;
+    width: 100%;
+    border-bottom: 1px solid seashell;
+    position: fixed;
+    z-index: 1;
+    align-items: center;
+  }
+
+  .header-inner{
+    padding: 0 0;
+    align-items: center;
+  }
+
+  header img{
+    height: 60px;
+    padding-left: 0;
+  }
+
+  nav{
+    text-align: right;
+    flex-grow: 1;
+  }
+
+  nav span{
+    display: inline-block;
+    padding: 20px 10px;
+  }
+
+
+  /*Location*/
+
+  .container.locations{
+    padding-top: 5px;
+  }
+
+
+  /* HEADER NAVIGATION STYLE */
+
+  .nav-right {
+  width: calc(100% - 25rem);
+  display: flex;
+  justify-content: flex-end;
+  }
+
+  .nav-left {
+  width: 25rem;
+  display: flex;
+  }
+
+  .menu {
+    display: flex;
+  }
+
+  .menu-item-right {
+        margin: 0 10px;
+  }
