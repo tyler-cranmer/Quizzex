@@ -2,6 +2,6 @@ $(document).ready(function() {
   $(".deck").fadeIin("slow");
 };
 
-$(".deck").onClick(function() {
-  $(this).fadeOut("slow");
+$("h1").onClick(function() {
+  $(".deck").fadeOut("slow");
 });
