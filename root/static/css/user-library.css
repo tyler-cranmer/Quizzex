@@ -12,7 +12,7 @@ body {
 .deck {
   font-size: 16pt;
   margin-right: 10px;
-  border-radius: 25%;
+  border-radius: 50%;
   background-color: var(--main-background-color);
 }
 
