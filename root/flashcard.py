@@ -191,7 +191,7 @@ def goToSignUp():
 # Performs either delete or open from a deck form submitted on the user library page
 @app.route('/doDeckFunction', methods=['GET', 'POST'])
 def doDeckFunction():
-    if(request.method="POST"):
+    if(request.method == "POST"):
         deckname = request.form['deckname']
         if(request.form['delete']):
             return "Delete was selected for " + deckname + " deck."
