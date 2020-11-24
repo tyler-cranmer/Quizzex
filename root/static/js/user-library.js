@@ -3,5 +3,5 @@ $(document).ready(function() {
 };
 
 $(".deck").onClick(function() {
-  $(this).fadeIn("slow");
+  $(this).fadeOut("slow");
 });
