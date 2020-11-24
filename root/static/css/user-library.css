@@ -10,4 +10,5 @@ body {
 
 #logo {
   font-family: "Barrio";
+  display: inline;
 }
