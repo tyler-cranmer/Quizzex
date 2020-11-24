@@ -180,9 +180,9 @@ def goToLibrary():
                 '<input name="deckname" type="hidden" value="' + deck[0] + '"/>' +
                 '<input name="edit" class="deck_button_img" type="image" src="static/img/editIcon.jpg" alt="Edit"/>' +
                 '</form>' +
-                '<form method="POST" action="/doDeckFunction" class="" display="inline">' +
+                '<form method="POST" action="/doDeckFunction" class="delete_btn" display="inline">' +
                 '<input name="deckname" type="hidden" value="' + deck[0] + '"/>' +
-                '<img name="delete" class="delete_btn deck_button_img" src="static/img/trashcan.png" alt="Delete">' +
+                '<img name="delete" class="deck_button_img" src="static/img/trashcan.png" alt="Delete">' +
                 '</form><br>' +
                 '</div>')
             deck_count = deck_count + 1
