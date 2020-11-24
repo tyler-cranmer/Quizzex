@@ -174,7 +174,7 @@ def goToLibrary():
                 '<input type="hidden" name="deckname" value="' + deck[0] + '"/>' +
                 '<input name="study" class="deck_button" type="submit" value="Study">' +
                 '<input name="edit" class="deck_button" type="submit" value="Edit">' +
-                '<input name="delete" class="deck_button" type="image" src="static/img/trashcan.png" alt="Submit" width="48" height="48"></form>')
+                '<input name="delete" class="deck_button_img" type="image" src="static/img/trashcan.png" alt="Submit"></form>')
             deck_count = deck_count + 1
     return render_template('user-library.html', username=user, decks = deck_html, numdecks = deck_count)
 

@@ -12,3 +12,9 @@ body {
   font-family: "Barrio";
   display: inline;
 }
+
+.deck_button_img {
+  width: 30;
+  height: 30;
+  visibility: transparent;
+}
