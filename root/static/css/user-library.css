@@ -21,5 +21,8 @@ h2 {
 .deck_button_img {
   width: 30px;
   height: 30px;
+}
+
+.deck_button {
   padding-right: 10px;
 }
