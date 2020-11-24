@@ -144,13 +144,11 @@ def addNewDeck():
     category=request.args.get('category-select', None)
     isPublic=request.args.get('public-checkbox', None)
     if(isPublic and name and description and category):
-        # NEED TO ADD CODE TO SUBMIT DECK TO DATABASE HERE!
         # THIS IS FOR PUBLIC DECKS ONLY!!!
         username = session['username']
         add_deck(username,1, name, category)
         return goToLibrary()
     elif(name and description and category):
-        # NEED TO ADD CODE TO SUBMIT DECK TO DATABASE HERE!
         # THIS IS FOR PRIVATE DECKS ONLY!!!
         username = session['username']
         add_deck(username,0, name, category)
