@@ -1,3 +1,5 @@
 $(document).ready(function() {
-  $(".deck").fadeIn("slow");
+  $(".deck").each(function() {
+    $(this).fadeIn("slow");
+  });
 });
