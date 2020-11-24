@@ -14,7 +14,6 @@ body {
 }
 
 .deck_button_img {
-  width: 30;
-  height: 30;
-  visibility: transparent;
+  width: 30px;
+  height: 30px;
 }
