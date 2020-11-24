@@ -27,3 +27,17 @@ Development method: Agile
 - Cycle through SCRUM master position
 
 Project Tracking Software: GitHub Projects
+
+
+Instructions for running:
+- At the command line, navigate to the top directory ('projectRegex')
+- Enter the following commands:
+    export FLASK_APP=root/flashcard.py
+
+    flask run
+
+- After the second command is entered, the server will start up, and you'll see a link to the landing page.
+- After these commands have been entered at the command line once, you can instead use the following command line shortcut:
+    python run.py
+
+    - Doing so (in the projectRegex directory) will run the first two commands and start the server up the same way.
