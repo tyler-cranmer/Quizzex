@@ -9,37 +9,31 @@
 </head>
 
 <body>
-  <!-- Header created by Tyler -->
-  <header class="bg-white d-flex">
-      <div class="container d-flex header-inner">
-        <div class="logo">
-            <img src="https://raw.githubusercontent.com/RegExTeam/projectRegEx/master/root/static/img/aspire_flashcards_icon.png"/>
-            <div></div>
-        </div>
-        <nav>
-            <div class="container nav-inner">
-                <div class="menu nav">
-                    <div class="nav-inner-cont nav-left left">
-                        <div class="search"></div>
-                    </div>
-
-                    <div class="nav-inner-cont nav-right right">
-                        <div class="log-in menu-item-right">
-                            <!-- <a href="#" class="button">Login</a> -->
-                        </div>
-                        <div class="sign-up menu-item-right">
-                            <!-- <a href="/library" class="button">Profile</a> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-      </div>
-  </header>
+  <!-- Navigation Bar https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp -->
+  <nav class="navbar bg-white">
+    <!-- Brand Logo -->
+    <a class="navbar-brand" href="#">
+      <img src="../static/img/logo-transparent.png" alt="Logo" style="width:40px;">
+    </a>
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link2</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link3</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+  </nav>
 
   <!-- Main Body of the Library page -->
 
-  <div id="user-info" name="user-info" class="container pt-5">
+  <div id="user-info" name="user-info" class="container pt-7">
     {% if username %}
       <h1>{{ username }}'s Profile</h2>
     {% else %}
