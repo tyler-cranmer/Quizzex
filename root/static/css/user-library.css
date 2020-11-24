@@ -48,14 +48,11 @@ form {
   margin: 0px;
 }
 
-.delete_form:hover {
-  border: 1px solid black;
-}
-
 img {
   width: 16px;
   height: 16px;
   display: block;
+  float: left;
 }
 
 .hidden {
