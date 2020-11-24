@@ -193,7 +193,7 @@ def goToSignUp():
 def doDeckFunction():
     if(request.method == 'POST'):
         deckname = request.form.get('deckname', None)
-        if(request.form.get('delete', None)):
+        if(request.form.get('delete.x', None)):
             return "Delete was selected for " + deckname + " deck."
         elif(request.form.get('study', None)):
             return goToStudy(deckname)
