@@ -170,7 +170,7 @@ def goToLibrary():
     if(user_decks):
         deck_html = ""
         for deck in user_decks:
-            deck_html = (deck_html + '<form action="/doDeckFunction"><h2 class="deck" method="post">' + deck[0] + '</h2>'+
+            deck_html = (deck_html + '<form method="POST" action="/doDeckFunction"><h2 class="deck">' + deck[0] + '</h2>'+
                 '<input type="hidden" name="deckname" value="' + deck[0] + '"/>' +
                 '<input name="study" class="deck_button" type="submit" value="Study">' +
                 '<input name="edit" class="deck_button" type="submit" value="Edit">' +
@@ -189,7 +189,7 @@ def goToSignUp():
     return render_template('SignUp.html')
 
 # Performs either delete or open from a deck form submitted on the user library page
-@app.route('/doDeckFunction')
+@app.route('/doDeckFunction', methods=['GET', 'POST'])
 def doDeckFunction():
     deckname = request.form['deckname']
     if(request.form['delete']):
