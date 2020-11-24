@@ -15,7 +15,7 @@
     <script src ="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"/> </script>
     <title>Study Cards</title>
   </head>
-  
+
   <body>
     <header class="bg-white d-flex">
         <div class="container d-flex header-inner">
@@ -47,13 +47,17 @@
     <main>
         <div class="UI-Container UI-Container-is-full">
           <div class="Info-Description" id="deck-name">
-            <h2>Deck Name</h2>
+          {% if deckname %}
+            <h2>{{ deckname }}</h2>
+          {% else %}
+            <h2>Deck</h2>
+          {% endif %}
           </div>
           <div class="deck-container Info-Description">
               <div class="card" onclick="flip()">
                 <div class = "front">
-                    <p>Front of the Card</p> 
-                </div>  
+                    <p>Front of the Card</p>
+                </div>
                 <div class="back">
                     <p>We need to pipe in the data from DB</p>
                 </div>

@@ -186,8 +186,12 @@ def doDeckFunction():
     if(request.args.get('delete', None)):
         return "Delete was selected for " + deckname + " deck."
     elif(request.args.get('study', None)):
-        return "Study was selected for " + deckname + " deck."
+        return goToStudy(deckname)
     elif(request.args.get('edit', None)):
         return "Edit was selected for " + deckname + " deck."
     else:
         return "Error: Neither edit, delete, nor study was selected for " + deckname + " deck."
+
+@app.route('/study')
+def goToStudy(deck):
+    return render_template('study_card.html', deckname=deck)
