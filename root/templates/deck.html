@@ -8,6 +8,39 @@
 </head>
 
 <body>
+  <!-- Navigation Bar https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp -->
+  <nav class="navbar navbar-expand-sm bg-white">
+    <!-- Brand Logo -->
+    <a class="navbar-brand" href="#">
+      <img src="../static/img/logo-transparent.png" alt="Logo" style="width:40px;">
+    </a>
+    <ul class="nav navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/library">Library</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/goToCreateDeck">Create Deck</a>
+      </li>
+      {% if numdecks %}
+        {% if numdecks > 0 %}
+          <li class="nav-item">
+            <a class="nav-link" href="/goToCreateCard">Create Card</a>
+          </li>
+        {% endif %}
+      {% else %}
+        <li class="nav-item">
+          <a class="nav-link disabled" href="/goToCreateCard">Create Card</a>
+        </li>
+      {% endif %}
+      <!-- Example of disabled link
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+      -->
+    </ul>
+  </nav>
+
+  <!-- Main Body of the Deck page -->
   <div id="main" name="main">
     <h1>Create New Deck</h1>
 

@@ -123,7 +123,14 @@ def addNewCard():
 # Navigates to deck.html page
 @app.route('/goToCreateDeck')
 def goToCreateDeck():
-    return render_template('deck.html')
+    user = session['username']
+    # retrieve a list of decks from database in the form [("deckName1",),("deckName2",),...]
+    user_decks = get_decks(user)
+    deck_count = 0
+    if(user_decks):
+        for deck in user_decks:
+            deck_count = deck_count + 1
+    return render_template('deck.html', numdecks=deck_count)
 
 # Adds a new deck to the database and returns to user library
 @app.route('/addNewDeck')
