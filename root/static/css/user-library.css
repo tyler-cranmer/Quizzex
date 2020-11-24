@@ -52,6 +52,8 @@ form {
   border: 1px solid black;
 }
 
-img {
+.hidden {
+  display: none;
   padding: 0px;
+  margin: 0px;
 }

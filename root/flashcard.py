@@ -177,11 +177,11 @@ def goToLibrary():
                 '<input name="study" class="deck" type="submit" value="' + deck[0] + '"/>' +
                 '</form>' +
                 '<form method="POST" action="/doDeckFunction" class="button_form">' +
-                '<input name="deckname" type="hidden" value="' + deck[0] + '"/>' +
+                '<input name="deckname" type="hidden" value="' + deck[0] + '" class="hidden"/>' +
                 '<input name="edit" class="deck_button_img" type="image" src="static/img/editIcon.jpg" alt="Edit"/>' +
                 '</form>' +
                 '<form method="POST" action="/doDeckFunction" class="button_form delete_form">' +
-                '<input name="deckname" type="hidden" value="' + deck[0] + '" style="display: none;"/>' +
+                '<input name="deckname" type="hidden" value="' + deck[0] + '" class="hidden"/>' +
                 '<img name="delete" class="deck_button_img" src="static/img/trashcan.png" alt="Delete">' +
                 '</form><br>' +
                 '</div>')
