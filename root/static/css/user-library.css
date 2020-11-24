@@ -48,12 +48,7 @@ form {
   margin: 0px;
 }
 
-.delete_form:hover {
-  border: 1px solid black;
-}
-
 img {
-  vertical-align: middle;
 }
 
 .hidden {
