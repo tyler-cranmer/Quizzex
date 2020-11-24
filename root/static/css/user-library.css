@@ -44,12 +44,6 @@ form {
 .deck_button_img {
   width: 16px;
   height: 16px;
-  margin-right: 10px;
-  display: inline;
-}
-
-.deck_button_img img {
-  display: inline;
 }
 
 .delete_btn:hover {
