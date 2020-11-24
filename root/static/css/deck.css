@@ -49,3 +49,8 @@
   #failedSaveText {
     color: red;
   }
+
+  #logo {
+    font-family: "Barrio";
+    display: inline;
+  }
