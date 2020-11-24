@@ -8,9 +8,9 @@ body {
   color: var(--main-text-color);
 }
 
-h2 {
-  display: inline;
-  padding-right: 10px;
+.deck {
+  font-size: 16pt;
+  margin-right: 10px;
 }
 
 #logo {
