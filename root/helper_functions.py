@@ -90,6 +90,17 @@ def get_decks(username):
     else:
         return myresult
 
+#function to get user
+def login(username, password):
+    user=get_user(username)
+    if user == None:
+        return False
+    else:
+        if (user[2] == password):
+            return True
+        else:
+            return False
+
 
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
