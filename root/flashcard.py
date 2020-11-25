@@ -24,29 +24,7 @@ mydb = mysql.connector.connect(
 mycursor = mydb.cursor()
 mycursor.execute("use flashcards")
 
-########################
-### Helper Functions ###
-########################
-def get_user(username):
-    sql = "SELECT * FROM users WHERE username = %s"
-    val=(username, )
-    mycursor.execute(sql,val)
-    myresult = mycursor.fetchall()
-    if len(myresult) == 0:
-        return None
-    else:
-        return myresult[0]
 
-#function to get user
-def login(username, password):
-    user=get_user(username)
-    if user == None:
-        return False
-    else:
-        if (user[2] == password):
-            return True
-        else:
-            return False
 
 ##############
 ### ROUTES ###
@@ -216,8 +194,16 @@ def doDeckFunction():
 def goToStudy(deck):
     return render_template('study_card.html', deckname=deck)
 
+# Deletes the selected deck from the user's library & the deck table
+# TO DO: Delete cards in said deck from the cards table, as well
 @app.route('/DeleteDeck')
 def deleteDeck(deck):
     user = session['username']
     remove_deck(user, deck)
     return goToLibrary()
+
+# Signs user out and returns them to the landing page
+@app.route('/doLogout')
+def signOut():
+    session['username'] = None
+    return mysite()
