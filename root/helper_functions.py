@@ -91,7 +91,6 @@ def get_decks(username):
     else:
         return myresult
 
-<<<<<<< HEAD
 #helper function to get a Deck ID given a deckname
 def get_deckID(deckname):
     sql = "SELECT iddecks FROM decks WHERE deckname = %s"
