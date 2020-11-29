@@ -52,6 +52,7 @@ def add_deck(username, public, deckname, category):
     mycursor.execute(sql, val)
     mydb.commit()
     print(mycursor.rowcount, "record inserted.")
+    
 
 #function to create new card
 def add_card(deckID, cardFront, cardBack):
@@ -81,7 +82,7 @@ def get_user(username):
 
 #function to get decks for a user from DATABASE
 def get_decks(username):
-    sql = "SELECT deckname FROM decks WHERE username = %s"
+    sql = "SELECT deckname, iddecks FROM decks WHERE username = %s"
     val = (username, )
     mycursor.execute(sql, val)
     myresult = mycursor.fetchall()
@@ -90,8 +91,27 @@ def get_decks(username):
     else:
         return myresult
 
+#helper function to get a Deck ID given a deckname
+def get_deckID(deckname):
+    sql = "SELECT iddecks FROM decks WHERE deckname = %s"
+    val=(deckname, )
+    mycursor.execute(sql,val)
+    myresult = mycursor.fetchall()
+    if len(myresult) == 0:
+        return None
+    else:
+        return myresult[0][0]
 
-
+#function to get cards from a deck
+def get_cards(deckid):
+    sql = "SELECT cardFront, cardBack FROM cards WHERE deckid = %s"
+    val = (deckid, )
+    mycursor.execute(sql, val)
+    myresult = mycursor.fetchall()
+    if len(myresult) == 0:
+        return None
+    else:
+        return myresult
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #function to REMOVE/delete an entry from the database
 
@@ -107,10 +127,14 @@ def remove_user(username):
         mydb.commit()
         return("User Deleted")
 
-#function to remove a deck
+#function to remove a deck and the cards in that deck
 def remove_deck(username, deckname):
-    sql = "DELETE FROM decks WHERE username = %s AND deckname = %s"
-    val=(username, deckname)
-    mycursor.execute(sql,val)
+    val1 = (get_deckID(deckname), )
+    sql1 = ("DELETE cards FROM cards WHERE deckID = %s")
+    #print(val1)
+    mycursor.execute(sql1,val1)
+    sql2 = ("DELETE decks FROM decks WHERE username = %s AND deckname = %s")
+    val2=(username, deckname)
+    mycursor.execute(sql2,val2)
     mydb.commit()
     return("Deck Deleted")
