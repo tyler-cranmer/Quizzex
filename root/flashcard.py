@@ -195,7 +195,7 @@ def goToStudy(deck):
     return render_template('study_card.html', deckname=deck)
 
 # Deletes the selected deck from the user's library & the deck table
-# TO DO: Delete cards in said deck from the cards table, as well
+#as well as the cards associated from that deck
 @app.route('/DeleteDeck')
 def deleteDeck(deck):
     user = session['username']

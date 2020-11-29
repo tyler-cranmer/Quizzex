@@ -103,7 +103,7 @@ def get_deckID(deckname):
     else:
         return myresult[0][0]
 =======
-#function to get user
+#function to get user/login
 def login(username, password):
     user=get_user(username)
     if user == None:
@@ -114,7 +114,6 @@ def login(username, password):
         else:
             return False
 
->>>>>>> 4128d8f9bffe983ca021aa24dff2ead180d5d7d5
 
 #function to get cards from a deck
 def get_cards(deckid):
