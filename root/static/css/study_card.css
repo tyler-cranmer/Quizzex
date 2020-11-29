@@ -276,13 +276,49 @@ left: 0;
   transform: rotateY( 180deg );
 }
 
-.cards-navControl{
-    height: 2rem;
-    left: 0;
-    margin: auto;
-    right: 0;
-    text-align: center;
-    width: 10%;
-    /* color: var(--ui_color_gray_60); */
-    display: inline;
+.cards-navControl {
+  height: 4rem;
+  margin-left: 11rem;
+  padding-left: 27px;
+  padding-right: 10px;
+  text-align: center;
+  width: 200px;
+  display: flex;
+}
+
+.next-left-container {
+  display: flex;
+  width: 6rem;
+}
+
+.space{
+  width: 10px;
+}
+.previous .button {
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(0, 98, 204);
+  cursor: pointer;
+  border-width: 1px;
+  border-style: initial;
+  border-color: rgb(0, 98, 204);
+  border-image: initial;
+  padding: 7px 30px;
+  background: transparent;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.next .button {
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(0, 98, 204);
+  cursor: pointer;
+  border-width: 1px;
+  border-style: initial;
+  border-color: rgb(0, 98, 204);
+  border-image: initial;
+  padding: 7px 30px;
+  background: transparent;
+  border-radius: 4px;
+  text-decoration: none;
 }

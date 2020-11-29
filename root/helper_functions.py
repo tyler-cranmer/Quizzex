@@ -91,6 +91,7 @@ def get_decks(username):
     else:
         return myresult
 
+<<<<<<< HEAD
 #helper function to get a Deck ID given a deckname
 def get_deckID(deckname):
     sql = "SELECT iddecks FROM decks WHERE deckname = %s"
@@ -101,6 +102,19 @@ def get_deckID(deckname):
         return None
     else:
         return myresult[0][0]
+=======
+#function to get user
+def login(username, password):
+    user=get_user(username)
+    if user == None:
+        return False
+    else:
+        if (user[2] == password):
+            return True
+        else:
+            return False
+
+>>>>>>> 4128d8f9bffe983ca021aa24dff2ead180d5d7d5
 
 #function to get cards from a deck
 def get_cards(deckid):
