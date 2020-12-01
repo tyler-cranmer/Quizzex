@@ -52,7 +52,7 @@ def add_deck(username, public, deckname, category):
     mycursor.execute(sql, val)
     mydb.commit()
     print(mycursor.rowcount, "record inserted.")
-    
+
 
 #function to create new card
 def add_card(deckID, cardFront, cardBack):
@@ -101,7 +101,7 @@ def get_deckID(deckname):
         return None
     else:
         return myresult[0][0]
-=======
+#=======
 #function to get user/login
 def login(username, password):
     user=get_user(username)
