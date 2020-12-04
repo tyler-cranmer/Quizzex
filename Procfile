@@ -1,1 +1,1 @@
-web: gunicorn root/flashcard:app
+web: gunicorn --chdir root flashcard:app
