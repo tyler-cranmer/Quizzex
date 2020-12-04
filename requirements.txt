@@ -7,7 +7,6 @@ certifi==2019.11.28
 chardet==3.0.4
 Click==7.0
 cryptography==2.8
-dbus-python==1.2.16
 dj-database-url==0.5.0
 Flask==1.1.2
 gunicorn==20.0.4
@@ -17,7 +16,6 @@ mysql-connector==2.2.9
 mysql-connector-python==8.0.15
 mysql-connector-python-rf==2.2.2
 mysqlclient==2.0.1
-PyGObject==3.36.0
 PyHamcrest==1.9.0
 PyJWT==1.7.1
 pymacaroons==0.13.0
