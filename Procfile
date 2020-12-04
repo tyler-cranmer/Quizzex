@@ -1,1 +1,1 @@
-web: gunicorn flashcard:app
+web: gunicorn root/flashcard:app
