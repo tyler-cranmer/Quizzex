@@ -1,0 +1,58 @@
+:root {
+  --main-background-color: #90EE90;
+  --main-text-color: black;
+  --secondary-background-color: #D5F9D5;
+}
+
+body {
+  background-color: var(--main-background-color);
+  color: var(--main-text-color);
+}
+
+#logo {
+  font-family: "Barrio";
+  display: inline;
+}
+
+h1 {
+  font-size: 36pt;
+  margin-top: 20px;
+}
+
+form {
+  display: inline;
+  padding: 0px;
+  margin-right: 10px;
+}
+
+.deckForm {
+  display: none;
+}
+
+.deck {
+  font-size: 20pt;
+  margin-left: 20px;
+  padding: 5px;
+  border: none;
+  background-color: var(--main-background-color);
+}
+
+.deck:hover {
+  background-color: var(--secondary-background-color);
+}
+
+.deck_button_img {
+  width: 16px;
+  height: 16px;
+  padding: 0px;
+  margin: 0px;
+}
+
+img {
+}
+
+.hidden {
+  display: none;
+  padding: 0px;
+  margin: 0px;
+}

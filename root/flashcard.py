@@ -97,7 +97,7 @@ def addNewCard():
     front = request.args.get('front-text', None)
     back = request.args.get('back-text', None)
     if(deck and front and back):
-        # NEED TO ADD CODE TO SUBMIT CARD TO DATABASE HERE!
+        add_card(get_deckID(deck), front, back)
         return goToLibrary()
     else:
         return goToCreateCard("Please fill out all fields before saving.")
@@ -151,15 +151,15 @@ def goToLibrary():
         for deck in user_decks:
             deck_html = (deck_html +
                 '<div class="deckForm">' +
-                '<form method="POST" action="/doDeckFunction" class="">' +
+                '<form method="POST" action="/study" class="">' +
                 '<input name="deckname" type="hidden" value="' + deck[0] + '"/>' +
                 '<input name="study" class="deck" type="submit" value="' + deck[0] + '"/>' +
                 '</form>' +
-                '<form method="POST" action="/doDeckFunction" class="button_form">' +
+                '<form method="POST" action="/editDeck" class="button_form">' +
                 '<input name="deckname" type="hidden" value="' + deck[0] + '" class="hidden"/>' +
                 '<input name="edit" class="deck_button_img" type="image" src="static/img/editIcon.jpg" alt="Edit"/>' +
                 '</form>' +
-                '<form method="POST" action="/doDeckFunction" class="button_form delete_form">' +
+                '<form method="POST" action="/deleteDeck" class="button_form delete_form">' +
                 '<input name="deckname" type="hidden" value="' + deck[0]+ '" class="hidden"/>' +
                 '<img name="delete" class="deck_button_img" src="static/img/trashcan.png" alt="Delete">' +
                 '</form><br>' +
@@ -187,19 +187,22 @@ def doDeckFunction():
         elif(request.form.get('study', None)):
             return goToStudy(deckname)
         elif(request.form.get('edit.x', None)):
-            return "Edit was selected for " + deckname + " deck."
+            return goToEditDeck(deckname)
         else:
             return "Error: Neither edit, delete, nor study was selected for " + deckname + " deck."
     else:
         return "Post request was not performed or another error occurred."
 
-@app.route('/study')
-def goToStudy(deck):
-    return render_template('study_card.html', deckname=deck)
+@app.route('/study', methods=['GET', 'POST'])
+def goToStudy():
+    # retrive deckname from the form
+    deck = request.form.get('deckname', None)
+    if(request.method == 'POST'):
+        return render_template('study_card.html', deckname=deck)
 
 # Deletes the selected deck from the user's library & the deck table
 #as well as the cards associated from that deck
-@app.route('/DeleteDeck')
+@app.route('/deleteDeck')
 def deleteDeck(deck):
     user = session['username']
     remove_deck(user, deck)
@@ -210,3 +213,35 @@ def deleteDeck(deck):
 def signOut():
     session['username'] = None
     return mysite()
+
+# Navigates user to the edit deck page for the selected deck
+@app.route('/editDeck', methods=['GET', 'POST'])
+def goToEditDeck():
+    # retrieve the current user's username
+    user = session['username']
+    # retrieve deckname from form request
+    if(request.method == 'POST'):
+        deckname = request.form.get('deckname', None)
+    # retrieve a list of decks from database in the form [("deckName1",),("deckName2",),...]
+    deck_cards = get_cards(get_deckID(deckname))
+    card_html = None
+    card_count = 0
+    # For each deck, increment count and create an html form with delete and open buttons
+    if(deck_cards):
+        card_html = ""
+        for card in deck_cards:
+            card_html = (card_html +
+                '<div class="cardForm">' +
+                '<h2>' + card[0] + '</h2>' +
+                '<p>' + card[1] + '</p>' +
+                '<form method="POST" action="" class="button_form">' +
+                '<input name="cardFront" type="hidden" value="' + card[0] + '" class="hidden"/>' +
+                '<input name="edit" class="deck_button_img" type="image" src="static/img/editIcon.jpg" alt="Edit"/>' +
+                '</form>' +
+                '<form method="POST" action="" class="button_form delete_form">' +
+                '<input name="cardFront" type="hidden" value="' + card[0]+ '" class="hidden"/>' +
+                '<img name="delete" class="deck_button_img" src="static/img/trashcan.png" alt="Delete">' +
+                '</form><br>' +
+                '</div>')
+            card_count = card_count + 1
+    return render_template('editDeck.html', username=user, deckname=deckname, cards=card_html, numcards=card_count)
