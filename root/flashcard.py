@@ -10,7 +10,9 @@ app = Flask(__name__)
 
 # Set secret key
 # REQUIRED for session to work to track username through website
-#app.config["SECRET_KEY"] = secrets.token_urlsafe(16)
+# SECRET_KEY must be a constant value. When using a random value, gunicorn re-returns
+# the code at random points with things called 'workers' that essentially makes it look
+# like the user is logged out and breaks things
 app.config["SECRET_KEY"] = '6548973215454889'
 
 ###################################
