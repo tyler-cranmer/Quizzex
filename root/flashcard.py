@@ -161,7 +161,7 @@ def goToLibrary():
                 '</form>' +
                 '<form method="POST" action="/deleteDeck" class="button_form delete_form">' +
                 '<input name="deckname" type="hidden" value="' + deck[0]+ '" class="hidden"/>' +
-                '<img name="delete" class="deck_button_img" src="static/img/trashcan.png" alt="Delete">' +
+                '<img name="delete" class="deck_button_img delete_button" src="static/img/trashcan.png" alt="Delete">' +
                 '</form><br>' +
                 '</div>')
             deck_count = deck_count + 1
@@ -202,9 +202,14 @@ def goToStudy():
 
 # Deletes the selected deck from the user's library & the deck table
 #as well as the cards associated from that deck
-@app.route('/deleteDeck')
-def deleteDeck(deck):
+@app.route('/deleteDeck', methods=['GET', 'POST'])
+def deleteDeck():
+    # retrieve the current user's username
     user = session['username']
+    # retrieve deckname from form request
+    if(request.method == 'POST'):
+        deck = request.form.get('deckname', None)
+    # remove the deck and all associated cards from database
     remove_deck(user, deck)
     return goToLibrary()
 
