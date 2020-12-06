@@ -45,25 +45,31 @@ nav span{
   display: inline;
 }
 
-.nav-right {
-width: calc(100% - 25rem);
-display: flex;
-justify-content: flex-end;
+.log-in-button {
+  font-weight: bold;
+  color: white;
+  background-color: #0062cc;
+  border: 1px;
+  border-radius: 4px;
 }
 
-.nav-left {
-width: 25rem;
-display: flex;
+.log-in-button:hover {
+  color: #0062cc;
+  background-color: #1A80EE;
 }
 
-.menu {
-  display: flex;
+.sign-up-button {
+  font-weight: bold;
+  color: #DE6C0D;
+  background-color: #F6BE34;
+  border: 1px;
+  border-radius: 4px;
 }
 
-.menu-item-right {
-      margin: 0 10px;
+.sign-up-button:hover {
+  color: #F6BE34;
+  background-color: #DE6C0D;
 }
-
 
 /* Main Section */
 
