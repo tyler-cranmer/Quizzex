@@ -256,3 +256,10 @@ def goToEditDeck(deck=None):
                 '</div>')
             card_count = card_count + 1
     return render_template('editDeck.html', username=user, deckname=deckname, cards=card_html, numcards=card_count)
+
+# Navigates the user to the Public Decks page
+@app.route('/publicDecks')
+def goToPublicDecks():
+    # TO DO
+    # add function to retrieve all public decks from DATABASE
+    return render_template('publicDecks.html', decks=None)
