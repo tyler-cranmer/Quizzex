@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $(".deckForm").each(function(index) {
+  $(".cardForm").each(function(index) {
     $(this).delay(300*index).fadeIn("slow");
   });
 });
