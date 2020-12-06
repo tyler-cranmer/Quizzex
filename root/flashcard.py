@@ -11,7 +11,7 @@ app = Flask(__name__)
 # Set secret key
 # REQUIRED for session to work to track username through website
 #app.config["SECRET_KEY"] = secrets.token_urlsafe(16)
-app.config["SECRET_KEY"] = 6548973215454889
+app.config["SECRET_KEY"] = '6548973215454889'
 
 ###################################
 ### Connection for the database ###
