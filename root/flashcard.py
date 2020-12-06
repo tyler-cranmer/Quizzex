@@ -98,7 +98,7 @@ def addNewCard():
     back = request.args.get('back-text', None)
     if(deck and front and back):
         add_card(get_deckID(deck), front, back)
-        return goToLibrary()
+        return goToEditDeck(deck)
     else:
         return goToCreateCard("Please fill out all fields before saving.")
 
@@ -221,12 +221,17 @@ def signOut():
 
 # Navigates user to the edit deck page for the selected deck
 @app.route('/editDeck', methods=['GET', 'POST'])
-def goToEditDeck():
+def goToEditDeck(deck=None):
     # retrieve the current user's username
     user = session['username']
-    # retrieve deckname from form request
-    if(request.method == 'POST'):
+    # set deckname if argument was passed into function
+    if(deck):
+        deckname = deck
+    # retrieve deckname from form request if applicable
+    elif(request.method == 'POST'):
         deckname = request.form.get('deckname', None)
+    else:
+        return goToLibrary()
     # retrieve a list of decks from database in the form [("deckName1",),("deckName2",),...]
     deck_cards = get_cards(get_deckID(deckname))
     card_html = None
