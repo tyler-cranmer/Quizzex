@@ -80,6 +80,9 @@ def doSignup():
 # Navigates to create-new-card.html
 @app.route('/goToCreateCard')
 def goToCreateCard(failMessage = None):
+    # return to homepage if not logged in
+    if 'username' not in session:
+        return mysite()
     user = session['username']
     # retrieve a list of decks from database in the form [("deckName1",),("deckName2",),...]
     user_decks = get_decks(user)
@@ -94,6 +97,9 @@ def goToCreateCard(failMessage = None):
 # Adds a new card to the database and returns to user library
 @app.route('/addNewCard')
 def addNewCard():
+    # return to homepage if not logged in
+    if 'username' not in session:
+        return mysite()
     # Function will be run when the save button is pressed and form is submitted for
     # create-new-card.html page
     deck = request.args.get('deck-select', None)
@@ -108,6 +114,9 @@ def addNewCard():
 # Navigates to deck.html page
 @app.route('/goToCreateDeck')
 def goToCreateDeck(failMessage = None):
+    # return to homepage if not logged in
+    if 'username' not in session:
+        return mysite()
     user = session['username']
     # retrieve a list of decks from database in the form [("deckName1",),("deckName2",),...]
     user_decks = get_decks(user)
@@ -121,6 +130,9 @@ def goToCreateDeck(failMessage = None):
 # Adds a new deck to the database and returns to user library
 @app.route('/addNewDeck')
 def addNewDeck():
+    # return to homepage if not logged in
+    if 'username' not in session:
+        return mysite()
     # Function will be run when the save button is pressed and form is submitted for
     # deck.html page
     name=request.args.get('deck-name', None)
@@ -143,6 +155,9 @@ def addNewDeck():
 # Returns user to their personal library page
 @app.route('/library')
 def goToLibrary():
+    # return to homepage if not logged in
+    if 'username' not in session:
+        return mysite()
     user = session['username']
     # retrieve a list of decks from database in the form [("deckName1",),("deckName2",),...]
     user_decks = get_decks(user)
@@ -180,24 +195,11 @@ def goToSignIn():
 def goToSignUp():
     return render_template('SignUp.html')
 
-# Performs either delete or open from a deck form submitted on the user library page
-@app.route('/doDeckFunction', methods=['GET', 'POST'])
-def doDeckFunction():
-    if(request.method == 'POST'):
-        deckname = request.form.get('deckname', None)
-        if(request.form.get('delete.x', None)):
-            return deleteDeck(deckname)
-        elif(request.form.get('study', None)):
-            return goToStudy(deckname)
-        elif(request.form.get('edit.x', None)):
-            return goToEditDeck(deckname)
-        else:
-            return "Error: Neither edit, delete, nor study was selected for " + deckname + " deck."
-    else:
-        return "Post request was not performed or another error occurred."
-
 @app.route('/study', methods=['GET', 'POST'])
 def goToStudy():
+    # return to homepage if not logged in
+    if 'username' not in session:
+        return mysite()
     # retrive deckname from the form
     deck = request.form.get('deckname', None)
     if(request.method == 'POST'):
@@ -225,6 +227,9 @@ def signOut():
 # Navigates user to the edit deck page for the selected deck
 @app.route('/editDeck', methods=['GET', 'POST'])
 def goToEditDeck(deck=None):
+    # return to homepage if not logged in
+    if 'username' not in session:
+        return mysite()
     # retrieve the current user's username
     user = session['username']
     # set deckname if argument was passed into function
