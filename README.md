@@ -31,6 +31,10 @@ Project Tracking Software: GitHub Projects
 
 Instructions for running:
 - At the command line, navigate to the top directory ('projectRegex')
+- Run the following command to ensure that all proper dependencies are installed:
+
+  python -m pip install -r requirements.txt
+  
 - Enter the following commands:
     export FLASK_APP=root/flashcard.py
 
