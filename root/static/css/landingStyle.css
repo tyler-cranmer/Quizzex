@@ -40,6 +40,11 @@ nav span{
 
 /* HEADER NAVIGATION STYLE */
 
+#logo {
+  font-family: "Barrio";
+  display: inline;
+}
+
 .nav-right {
 width: calc(100% - 25rem);
 display: flex;

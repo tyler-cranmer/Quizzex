@@ -36,7 +36,10 @@ mycursor.execute("use flashcards")
 # Navigates to langingPage.html, root of the website
 @app.route('/')
 def mysite():
-    return render_template('landingPage.html')
+    isLoggedIn = False
+    if 'username' in session:
+        isLoggedIn = True
+    return render_template('landingPage.html', isLoggedIn=isLoggedIn)
 
 # Validates the entered username and password
 # If valid, sets session variables and goes to user's library page
@@ -216,7 +219,7 @@ def deleteDeck():
 # Signs user out and returns them to the landing page
 @app.route('/doLogout')
 def signOut():
-    session['username'] = None
+    session.clear()
     return mysite()
 
 # Navigates user to the edit deck page for the selected deck
