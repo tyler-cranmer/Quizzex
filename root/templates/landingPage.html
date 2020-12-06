@@ -32,7 +32,7 @@
     <body style="background-color:#90EE90">
       {% if isLoggedIn %}
         <!-- Navigation Bar https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp -->
-        <nav class="navbar navbar-expand-sm" style="background-image: url('../static/img/header.jpg');">
+        <nav class="navbar navbar-expand-sm fixed-top" style="background-image: url('../static/img/header.jpg');">
           <!-- Brand Logo -->
           <a class="navbar-brand" href="/">
             <p id="logo">Quizzex</p>
@@ -40,7 +40,7 @@
           </a>
           <ul class="nav navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="/library">Library</a>
+              <a class="nav-link" href="/library" style="color: white; background-color: #0062cc; border: 1px; border-radius: 4px;">Library</a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="/publicDecks">Public</a>
@@ -51,47 +51,31 @@
             <li class="nav-item">
               <a class="nav-link" href="/doLogout">Sign Out</a>
             </li>
-            <!-- Example of disabled link
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-            -->
           </ul>
         </nav>
         {% else %}
-          <header class="bg-white d-flex" style="background-image: url('../static/img/header.jpg'); height:105px;">
-              <div class="container d-flex header-inner">
-                  <img id="logo" src="../static/img/logo-transparent.png" style="height:130px; width:270px;">
-
-                  <nav>
-                      <div class="container nav-inner">
-                          <div class="menu nav">
-                              <div class="nav-inner-cont nav-left left">
-                                  <div class="search">Search
-                                  </div>
-                              </div>
-
-                              <div class="nav-inner-cont nav-right right">
-                                  <div class="log-in menu-item-right" style="height:55px; background-color:#0062cc; border-radius: 4px;">
-                                      <a href="/signIn" class="button" style="height:55px; color:white;">Log In</a>
-                                  </div>
-
-                                  <div class="sign-up menu-item-right" style="height:55px;">
-                                      <a href="/signUp" class="button" style="height:55px;">Sign up</a>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </nav>
-              </div>
-          </header>
+        <nav class="navbar navbar-expand-sm fixed-top" style="background-image: url('../static/img/header.jpg');">
+          <!-- Brand Logo -->
+          <a class="navbar-brand" href="/">
+            <p id="logo">Quizzex</p>
+            <img src="../static/img/logo-transparent.png" alt="Logo" style="width:40px;">
+          </a>
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item active" style="margin-right: 10px;">
+              <a class="nav-link" href="/signIn" style="font-weight: bold; color: white; background-color: #0062cc; border: 1px; border-radius: 4px;">Log In</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/signUp" style="font-weight: bold; color: #DE6C0D; background-color: #F6BE34; border: 1px; border-radius: 4px;">Sign Up</a>
+            </li>
+          </ul>
+        </nav>
         {% endif %}
 
 
         <main>
             <div class="UI-Container UI-Container-is-full">
                 <div class="Info-Description">
-                    <h2 style="margin-top: 35px;">Quizzex!</h2>
+                    <h2 style="margin-top: 15px;">Quizzex!</h2>
                     <h4 style="font-family:Tahoma;"><b><i>Learn dangerously.</i></b></h4>
                 </div>
                 <div class="deck-container Info-Description">
