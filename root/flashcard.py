@@ -250,17 +250,23 @@ def goToEditDeck(deck=None):
         for card in deck_cards:
             card_html = (card_html +
                 '<div class="cardForm">' +
-                '<h2 class="cardFront">' + card[0] + '</h2>' +
+                '<div class="cardRow d-flex">' +
+                '<div class="flashcard cardFront d-flex justify-content-center">' +
+                '<h2 class="cardFrontText align-self-center">' + card[0] + '</h2>' +
+                '</div>' +
+                '<div class="flashcard cardBack d-flex justify-content-center">' +
+                '<p class="cardBackText align-self-center">' + card[1] + '</p>' +
+                '</div>' +
                 '<form method="POST" action="" class="button_form delete_form">' +
                 '<input name="cardFront" type="hidden" value="' + card[0]+ '" class="hidden"/>' +
                 '<img name="delete" class="deck_button_img" src="static/img/trashcan.png" alt="Delete">' +
                 '</form>' +
-                '<p class="cardBack">' + card[1] + '</p>' +
                 # Edit has been removed.  Maybe will be added back in at a later date
                 #'<form method="POST" action="" class="button_form">' +
                 #'<input name="cardFront" type="hidden" value="' + card[0] + '" class="hidden"/>' +
                 #'<input name="edit" class="deck_button_img" type="image" src="static/img/editIcon.jpg" alt="Edit"/>' +
                 #'</form>' +
+                '</div>' +
                 '</div>')
             card_count = card_count + 1
     return render_template('editDeck.html', username=user, deckname=deckname, cards=card_html, numcards=card_count)
