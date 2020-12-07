@@ -263,7 +263,9 @@ def goToEditDeck(deck=None):
                 '</div>' +
                 '<form method="POST" action="" class="button_form delete_form">' +
                 '<input name="cardFront" type="hidden" value="' + card[0]+ '" class="hidden"/>' +
+                '<span data-toggle="tooltip" title="Delete">' +
                 '<img name="delete" class="deck_button_img" src="static/img/trashcan.png" alt="Delete">' +
+                '</span>' +
                 '</form>' +
                 # Edit has been removed.  Maybe will be added back in at a later date
                 #'<form method="POST" action="" class="button_form">' +
