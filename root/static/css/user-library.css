@@ -5,7 +5,8 @@
 }
 
 body {
-  background-color: var(--main-background-color);
+  /*background-color: var(--main-background-color);*/
+  background-image: url('../img/library_img.jpg');
   color: var(--main-text-color);
 }
 
@@ -23,6 +24,18 @@ form {
   display: inline;
   padding: 0px;
   margin-right: 10px;
+}
+
+#content {
+  background-color: rgba(144, 238, 144);
+  border: 1px;
+  border-radius: 4px;
+}
+
+#user-info {
+}
+
+#deck-list {
 }
 
 .deckForm {

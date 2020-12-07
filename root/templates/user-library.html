@@ -53,31 +53,32 @@
   </nav>
 
   <!-- Main Body of the Library page -->
-
-  <div id="user-info" name="user-info" class="container">
-    {% if username %}
-      <h1>{{ username }}'s Library</h2>
-    {% else %}
-      <h1>Your Profile</h1>
-    {% endif %}
-
-    {% if numdecks %}
-      {% if numdecks > 1 %}
-        <p id="deck-counter" name="deck-counter">You currently have {{ numdecks }} decks!</p>
+  <div id="content" class="container">
+    <div id="user-info" name="user-info" class="container">
+      {% if username %}
+        <h1>{{ username }}'s Library</h2>
       {% else %}
-        <p id="deck-counter" name="deck-counter">You currently have 1 deck!</p>
+        <h1>Your Profile</h1>
       {% endif %}
-    {% else %}
-      <p id="deck-counter" name="deck-counter">You currently have 0 decks</p>
-    {% endif %}
-  </div>
-  <div id="deck-list" name="deck-list" class="container">
-    {% if decks %}
-      {{ decks|safe }}
-      <br>
-    {% else %}
-      <p>Click the "Create Deck" button in the navigation bar above to get started!</p>
-    {% endif %}
+
+      {% if numdecks %}
+        {% if numdecks > 1 %}
+          <p id="deck-counter" name="deck-counter">You currently have {{ numdecks }} decks!</p>
+        {% else %}
+          <p id="deck-counter" name="deck-counter">You currently have 1 deck!</p>
+        {% endif %}
+      {% else %}
+        <p id="deck-counter" name="deck-counter">You currently have 0 decks</p>
+      {% endif %}
+    </div>
+    <div id="deck-list" name="deck-list" class="container">
+      {% if decks %}
+        {{ decks|safe }}
+        <br>
+      {% else %}
+        <p>Click the "Create Deck" button in the navigation bar above to get started!</p>
+      {% endif %}
+    </div>
   </div>
 
   <!-- Possible Folder Creation Section
