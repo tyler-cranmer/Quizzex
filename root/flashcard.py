@@ -175,11 +175,15 @@ def goToLibrary():
                 '</form>' +
                 '<form method="POST" action="/editDeck" class="button_form">' +
                 '<input name="deckname" type="hidden" value="' + deck[0] + '" class="hidden"/>' +
+                '<span data-toggle="tooltip" title="Edit">' +
                 '<input name="edit" class="deck_button_img" type="image" src="static/img/editIcon.jpg" alt="Edit"/>' +
+                '</span>' +
                 '</form>' +
                 '<form method="POST" action="/deleteDeck" class="button_form delete_form">' +
                 '<input name="deckname" type="hidden" value="' + deck[0]+ '" class="hidden"/>' +
+                '<span data-toggle="tooltip" title="Delete">' +
                 '<img name="delete" class="deck_button_img delete_button" src="static/img/trashcan.png" alt="Delete">' +
+                '</span>' +
                 '</form><br>' +
                 '</div>')
             deck_count = deck_count + 1

@@ -8,4 +8,8 @@ $(document).ready(function() {
       $(this).parent("form").submit();
     }
   });
+
+  // Enable tooltips for bootstrap on html page
+  $('[data-toggle="tooltip"]').tooltip();
+
 });
