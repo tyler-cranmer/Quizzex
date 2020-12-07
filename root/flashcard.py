@@ -175,11 +175,15 @@ def goToLibrary():
                 '</form>' +
                 '<form method="POST" action="/editDeck" class="button_form">' +
                 '<input name="deckname" type="hidden" value="' + deck[0] + '" class="hidden"/>' +
+                '<span data-toggle="tooltip" title="Edit">' +
                 '<input name="edit" class="deck_button_img" type="image" src="static/img/editIcon.jpg" alt="Edit"/>' +
+                '</span>' +
                 '</form>' +
                 '<form method="POST" action="/deleteDeck" class="button_form delete_form">' +
                 '<input name="deckname" type="hidden" value="' + deck[0]+ '" class="hidden"/>' +
+                '<span data-toggle="tooltip" title="Delete">' +
                 '<img name="delete" class="deck_button_img delete_button" src="static/img/trashcan.png" alt="Delete">' +
+                '</span>' +
                 '</form><br>' +
                 '</div>')
             deck_count = deck_count + 1
@@ -259,7 +263,9 @@ def goToEditDeck(deck=None):
                 '</div>' +
                 '<form method="POST" action="" class="button_form delete_form">' +
                 '<input name="cardFront" type="hidden" value="' + card[0]+ '" class="hidden"/>' +
+                '<span data-toggle="tooltip" title="Delete">' +
                 '<img name="delete" class="deck_button_img" src="static/img/trashcan.png" alt="Delete">' +
+                '</span>' +
                 '</form>' +
                 # Edit has been removed.  Maybe will be added back in at a later date
                 #'<form method="POST" action="" class="button_form">' +
