@@ -56,12 +56,6 @@ textarea {
 }
 
 .flashcard p {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 480px;
-  overflow: auto;
-  margin: auto 10px;
 }
 
 #front-card-example p {

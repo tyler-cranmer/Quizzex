@@ -5,7 +5,7 @@
 $('#front-text').on('input', function() {
   var numchars = $('#front-text').val().length;
   $('#front-counter').text(numchars + "/300");
-  $('#front-card-example').html("<p>" + $('#front-text').val() + "</p>");
+  $('#front-card-example').html("<p class='align-self-center'>" + $('#front-text').val() + "</p>");
 });
 
 /*
@@ -15,7 +15,7 @@ $('#front-text').on('input', function() {
 $('#back-text').on('input', function() {
   var numchars = $('#back-text').val().length;
   $('#back-counter').text(numchars + "/300");
-  $('#back-card-example').html("<p>" + $('#back-text').val() + "</p>");
+  $('#back-card-example').html("<p class='align-self-center'>" + $('#back-text').val() + "</p>");
 });
 
 /*
