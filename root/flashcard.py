@@ -15,6 +15,9 @@ app = Flask(__name__)
 # like the user is logged out and breaks things
 app.config["SECRET_KEY"] = '6548973215454889'
 
+# Attempt at preventing caching by the browser when updates to database are made
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+
 ###################################
 ### Connection for the database ###
 ###################################
