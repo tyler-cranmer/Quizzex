@@ -256,13 +256,14 @@ def goToEditDeck(deck=None):
                 '<div class="cardForm">' +
                 '<div class="cardRow d-flex">' +
                 '<div class="flashcard cardFront d-flex justify-content-center">' +
-                '<h2 class="cardFrontText align-self-center">' + card[0] + '</h2>' +
+                '<h2 class="cardFrontText align-self-center">' + card[1] + '</h2>' +
                 '</div>' +
                 '<div class="flashcard cardBack d-flex justify-content-center">' +
-                '<p class="cardBackText align-self-center">' + card[1] + '</p>' +
+                '<p class="cardBackText align-self-center">' + card[2] + '</p>' +
                 '</div>' +
                 '<form method="POST" action="" class="button_form delete_form">' +
-                '<input name="cardFront" type="hidden" value="' + card[0]+ '" class="hidden"/>' +
+                '<input name="cardID" type="hidden" value="' + str(card[0]) + '" class="hidden"/>' +
+                '<input name="cardFront" type="hidden" value="' + card[1]+ '" class="hidden"/>' +
                 '<span data-toggle="tooltip" title="Delete">' +
                 '<img name="delete" class="deck_button_img" src="static/img/trashcan.png" alt="Delete">' +
                 '</span>' +

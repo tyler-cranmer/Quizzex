@@ -116,7 +116,7 @@ def login(username, password):
 
 #function to get cards from a deck
 def get_cards(deckid):
-    sql = "SELECT cardFront, cardBack FROM cards WHERE deckid = %s"
+    sql = "SELECT idcards, cardFront, cardBack FROM cards WHERE deckid = %s"
     val = (deckid, )
     mycursor.execute(sql, val)
     myresult = mycursor.fetchall()
