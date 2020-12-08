@@ -153,7 +153,7 @@ def remove_deck(username, deckname):
 
 
 def remove_card(card_id):
-    sql=("DELETE card from cards WHERE cardID = %s")
+    sql=("DELETE cards from cards WHERE idcards = %s")
     val=(card_id, )
     mycursor.execute(sql,val)
     mydb.commit()
