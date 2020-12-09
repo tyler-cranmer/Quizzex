@@ -91,6 +91,17 @@ def get_decks(username):
     else:
         return myresult
 
+#get all public decks
+def get_public_decks():
+    sql="SELECT deckname, iddecks FROM decks WHERE public = 1"
+    mycursor.execute(sql)
+    myresult = mycursor.fetchall()
+    if len(myresult) == 0:
+        return None
+    else:
+        return myresult
+
+
 #helper function to get a Deck ID given a deckname
 def get_deckID(deckname):
     sql = "SELECT iddecks FROM decks WHERE deckname = %s"
