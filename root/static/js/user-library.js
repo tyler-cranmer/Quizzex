@@ -5,7 +5,7 @@ $(document).ready(function() {
 
   $(".delete_button").click(function() {
     if(confirm("This will delete the deck and all associated cards.  Are you sure?")) {
-      $(this).parent("form").submit();
+      $(this).closest("form").submit();
     }
   });
 

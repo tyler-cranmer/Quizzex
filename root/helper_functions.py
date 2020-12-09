@@ -91,6 +91,17 @@ def get_decks(username):
     else:
         return myresult
 
+#get all public decks
+def get_public_decks():
+    sql="SELECT deckname, iddecks FROM decks WHERE public = 1"
+    mycursor.execute(sql)
+    myresult = mycursor.fetchall()
+    if len(myresult) == 0:
+        return None
+    else:
+        return myresult
+
+
 #helper function to get a Deck ID given a deckname
 def get_deckID(deckname):
     sql = "SELECT iddecks FROM decks WHERE deckname = %s"
@@ -116,7 +127,7 @@ def login(username, password):
 
 #function to get cards from a deck
 def get_cards(deckid):
-    sql = "SELECT cardFront, cardBack FROM cards WHERE deckid = %s"
+    sql = "SELECT idcards, cardFront, cardBack FROM cards WHERE deckid = %s"
     val = (deckid, )
     mycursor.execute(sql, val)
     myresult = mycursor.fetchall()
@@ -153,7 +164,7 @@ def remove_deck(username, deckname):
 
 
 def remove_card(card_id):
-    sql=("DELETE card from cards WHERE cardID = %s")
+    sql=("DELETE cards from cards WHERE idcards = %s")
     val=(card_id, )
     mycursor.execute(sql,val)
     mydb.commit()

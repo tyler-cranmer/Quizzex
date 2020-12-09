@@ -15,6 +15,9 @@ app = Flask(__name__)
 # like the user is logged out and breaks things
 app.config["SECRET_KEY"] = '6548973215454889'
 
+# Attempt at preventing caching by the browser when updates to database are made
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
+
 ###################################
 ### Connection for the database ###
 ###################################
@@ -256,15 +259,16 @@ def goToEditDeck(deck=None):
                 '<div class="cardForm">' +
                 '<div class="cardRow d-flex">' +
                 '<div class="flashcard cardFront d-flex justify-content-center">' +
-                '<h2 class="cardFrontText align-self-center">' + card[0] + '</h2>' +
+                '<h2 class="cardFrontText align-self-center">' + card[1] + '</h2>' +
                 '</div>' +
                 '<div class="flashcard cardBack d-flex justify-content-center">' +
-                '<p class="cardBackText align-self-center">' + card[1] + '</p>' +
+                '<p class="cardBackText align-self-center">' + card[2] + '</p>' +
                 '</div>' +
-                '<form method="POST" action="" class="button_form delete_form">' +
-                '<input name="cardFront" type="hidden" value="' + card[0]+ '" class="hidden"/>' +
+                '<form method="POST" action="/deleteCard" class="button_form delete_form">' +
+                '<input name="deckname" type="hidden" value="' + deckname + '" class="hidden"/>' +
+                '<input name="cardID" type="hidden" value="' + str(card[0]) + '" class="hidden"/>' +
                 '<span data-toggle="tooltip" title="Delete">' +
-                '<img name="delete" class="deck_button_img" src="static/img/trashcan.png" alt="Delete">' +
+                '<img name="delete" class="deck_button_img delete_button" src="static/img/trashcan.png" alt="Delete">' +
                 '</span>' +
                 '</form>' +
                 # Edit has been removed.  Maybe will be added back in at a later date
@@ -283,3 +287,17 @@ def goToPublicDecks():
     # TO DO
     # add function to retrieve all public decks from DATABASE
     return render_template('publicDecks.html', decks=None)
+
+@app.route('/deleteCard', methods=['GET', 'POST'])
+def deleteCard():
+    # return to homepage if not logged in
+    if 'username' not in session:
+        return mysite()
+    # retrieve deckname and cardID from form request if applicable
+    elif(request.method == 'POST'):
+        deckname = request.form.get('deckname', None)
+        cardID = request.form.get('cardID', None)
+        remove_card(cardID)
+        return goToEditDeck(deckname)
+    else:
+        return goToLibrary()
