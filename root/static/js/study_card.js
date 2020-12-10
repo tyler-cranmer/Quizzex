@@ -27,10 +27,15 @@ $(document).ready(function() {
             temp = JSON.parse(data);
 
             console.log("New Array: ", temp)
-            var deckArray = temp;
-            var index = 0;
+
+            if (temp == null){
+                var deckArray = [['Deck is empty', 'Deck is empy']];
+            }else{
+                var deckArray = temp;
+            }
 
             //Setting initial values for deck
+            var index = 0;
             $(document).ready(function() {
                 $("#card_info").text(deckArray[index][0]);
                 $("#backcard_info").text(deckArray[index][1]);
