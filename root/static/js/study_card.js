@@ -28,6 +28,7 @@ $(document).ready(function() {
 
             console.log("New Array: ", temp)
 
+            //If there are no cards in deck, display deck is empty
             if (temp == null){
                 var deckArray = [['Deck is empty', 'Deck is empy']];
             }else{
@@ -42,7 +43,7 @@ $(document).ready(function() {
                 $("#fade").fadeIn(1000);
             });
 
-            //Iterate through the array
+            //Iterate to next card in deck
             $("#next_button").click(function() {
                 flip_back();
                 setTimeout(function() {
@@ -64,7 +65,7 @@ $(document).ready(function() {
                 }, 250);
             });
 
-
+            //Iterate to previous card in deck.
             $("#back_button").click(function() {
                 flip_back();
                 setTimeout(function() {
