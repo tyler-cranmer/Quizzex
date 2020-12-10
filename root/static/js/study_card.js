@@ -6,7 +6,7 @@ function flip() {
 
 //function to check if back of the card being displayed is present in html
 //Used to fix z-indexing problem when iterating through 
-//the deck while back of card is showing. 
+//the deck while back of card is showing..
 function flip_back() {
     var cardFlipped = document.getElementsByClassName('card flipped');
     if (cardFlipped.length > 0) {
