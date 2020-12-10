@@ -218,8 +218,9 @@ def goToStudy():
         isLoggedIn = True
     # retrive deckname from the form
     deck = request.form.get('deckname', None)
+    deckID = request.form.get('deckID', None)
     if(request.method == 'POST'):
-        return render_template('study_card.html', deckname=deck, isLoggedIn=isLoggedIn)
+        return render_template('study_card.html', deckname=deck, deckID=deckID, isLoggedIn=isLoggedIn)
 
 # Deletes the selected deck from the user's library & the deck table
 #as well as the cards associated from that deck
