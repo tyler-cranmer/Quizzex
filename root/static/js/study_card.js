@@ -6,7 +6,7 @@ function flip() {
 
 //function to check if back of the card being displayed is present in html
 //Used to fix z-indexing problem when iterating through 
-//the deck while back of card is showing. 
+//the deck while back of card is showing..
 function flip_back() {
     var cardFlipped = document.getElementsByClassName('card flipped');
     if (cardFlipped.length > 0) {
@@ -27,17 +27,23 @@ $(document).ready(function() {
             temp = JSON.parse(data);
 
             console.log("New Array: ", temp)
-            var deckArray = temp;
-            var index = 0;
+
+            //If there are no cards in deck, display deck is empty
+            if (temp == null){
+                var deckArray = [['Deck is empty', 'Deck is empy']];
+            }else{
+                var deckArray = temp;
+            }
 
             //Setting initial values for deck
+            var index = 0;
             $(document).ready(function() {
                 $("#card_info").text(deckArray[index][0]);
                 $("#backcard_info").text(deckArray[index][1]);
                 $("#fade").fadeIn(1000);
             });
 
-            //Iterate through the array
+            //Iterate to next card in deck
             $("#next_button").click(function() {
                 flip_back();
                 setTimeout(function() {
@@ -59,7 +65,7 @@ $(document).ready(function() {
                 }, 250);
             });
 
-
+            //Iterate to previous card in deck.
             $("#back_button").click(function() {
                 flip_back();
                 setTimeout(function() {
