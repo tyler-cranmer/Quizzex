@@ -169,3 +169,16 @@ def remove_card(card_id):
     mycursor.execute(sql,val)
     mydb.commit()
     return("Card Deleted")
+
+
+#----------------------------------------------------------------------
+#function to get cards from a deck
+def get_cards1(deckid):
+    sql = "SELECT cardFront, cardBack FROM cards WHERE deckid = %s"
+    val = (deckid, )
+    mycursor.execute(sql, val)
+    myresult = mycursor.fetchall()
+    if len(myresult) == 0:
+        return None
+    else:
+        return myresult

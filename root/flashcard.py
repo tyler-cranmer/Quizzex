@@ -2,6 +2,7 @@ from flask import Flask
 from flask import request
 from flask import render_template
 from flask import session
+from flask import json, jsonify
 import mysql.connector
 import secrets
 from helper_functions import *
@@ -301,3 +302,35 @@ def deleteCard():
         return goToEditDeck(deckname)
     else:
         return goToLibrary()
+
+###############################################################
+###############################################################
+########################HELP###################################
+
+#route will only work for user first deck in there profile
+#It works though
+
+@app.route("/shuffleCard", methods=['GET', 'POST'])
+def api_info():
+
+        user = session['username']
+        deckname=get_decks(user)
+        deckID=get_deckID(deckname[0][0]) #<--------- only first deck
+        deck_cards = get_cards1(deckID)
+        cards = json.dumps(deck_cards)
+        return (cards)
+
+
+#this is the same function that im trying to get to work
+# I thought request.form.get(deckname) would work but nothing gets stored
+# in the variable.
+
+# @app.route("/shuffleCard", methods=['GET', 'POST'])
+# def api_info():
+
+#         deckname = request.form.get('deckname', None)
+#         deckID=get_deckID(deckname)
+#         deck_cards = get_cards1(deckID)
+#         cards = json.dumps(deck_cards)
+#         return (cards)
+    
