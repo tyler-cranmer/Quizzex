@@ -15,7 +15,7 @@ body {
   display: inline;
 }
 
-.log-in-button {
+.blue-button {
   font-weight: bold;
   color: white;
   background-color: #0062cc;
@@ -23,12 +23,12 @@ body {
   border-radius: 4px;
 }
 
-.log-in-button:hover {
+.blue-button:hover {
   color: #0062cc;
   background-color: #1A80EE;
 }
 
-.sign-up-button {
+.orange-button {
   font-weight: bold;
   color: #DE6C0D;
   background-color: #F6BE34;
@@ -36,7 +36,7 @@ body {
   border-radius: 4px;
 }
 
-.sign-up-button:hover {
+.orange-button:hover {
   color: #F6BE34;
   background-color: #DE6C0D;
 }
