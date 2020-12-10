@@ -13,33 +13,47 @@
 </head>
 
 <body>
-  <!-- Navigation Bar https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp -->
-  <nav class="navbar navbar-expand-sm fixed-top" style="background-image: url('../static/img/header.jpg');">
-    <!-- Brand Logo -->
-    <a class="navbar-brand" href="/">
-      <p id="logo">Quizzex</p>
-      <img src="../static/img/logo-transparent.png" alt="Logo" style="width:40px;">
-    </a>
-    <ul class="nav navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/library">Library</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="/publicDecks">Public</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/goToCreateDeck">Create Deck</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/doLogout">Sign Out</a>
-      </li>
-      <!-- Example of disabled link
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-      -->
-    </ul>
-  </nav>
+  {% if isLoggedIn %}
+    <!-- Navigation Bar https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp -->
+    <nav class="navbar navbar-expand-sm fixed-top" style="background-image: url('../static/img/header.jpg');">
+      <!-- Brand Logo -->
+      <a class="navbar-brand" href="/">
+        <p id="logo">Quizzex</p>
+        <img src="../static/img/logo-transparent.png" alt="Logo" style="width:40px;">
+      </a>
+      <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/library">Library</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/publicDecks">Public</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/goToCreateDeck">Create Deck</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/doLogout">Sign Out</a>
+        </li>
+      </ul>
+    </nav>
+    {% else %}
+    <nav class="navbar navbar-expand-sm fixed-top" style="background-image: url('../static/img/header.jpg');">
+      <!-- Brand Logo -->
+      <a class="navbar-brand" href="/">
+        <p id="logo">Quizzex</p>
+        <img src="../static/img/logo-transparent.png" alt="Logo" style="width:40px;">
+      </a>
+      <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item active" style="margin-right: 10px;">
+          <a class="nav-link log-in-button" href="/signIn">Log In</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link sign-up-button" href="/signUp">Sign Up</a>
+        </li>
+      </ul>
+    </nav>
+    {% endif %}
+
 
   <!-- Main Body of the Library page -->
 

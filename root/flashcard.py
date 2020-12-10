@@ -211,13 +211,14 @@ def goToSignUp():
 
 @app.route('/study', methods=['GET', 'POST'])
 def goToStudy():
-    # return to homepage if not logged in
-    if 'username' not in session:
-        return mysite()
+    # retrieve the current user's username
+    isLoggedIn = False
+    if 'username' in session:
+        isLoggedIn = True
     # retrive deckname from the form
     deck = request.form.get('deckname', None)
     if(request.method == 'POST'):
-        return render_template('study_card.html', deckname=deck)
+        return render_template('study_card.html', deckname=deck, isLoggedIn=isLoggedIn)
 
 # Deletes the selected deck from the user's library & the deck table
 #as well as the cards associated from that deck
@@ -291,9 +292,12 @@ def goToEditDeck(deck=None):
 # Navigates the user to the Public Decks page
 @app.route('/publicDecks')
 def goToPublicDecks():
+    isLoggedIn = False
+    if 'username' in session:
+        isLoggedIn = True
     # TO DO
     # add function to retrieve all public decks from DATABASE
-    return render_template('publicDecks.html', decks=None)
+    return render_template('publicDecks.html', decks=None, isLoggedIn=isLoggedIn)
 
 @app.route('/deleteCard', methods=['GET', 'POST'])
 def deleteCard():

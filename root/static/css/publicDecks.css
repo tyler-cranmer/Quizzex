@@ -9,11 +9,39 @@ body {
   color: var(--main-text-color);
 }
 
+/* Navigation Bar */
 #logo {
   font-family: "Barrio";
   display: inline;
 }
 
+.log-in-button {
+  font-weight: bold;
+  color: white;
+  background-color: #0062cc;
+  border: 1px;
+  border-radius: 4px;
+}
+
+.log-in-button:hover {
+  color: #0062cc;
+  background-color: #1A80EE;
+}
+
+.sign-up-button {
+  font-weight: bold;
+  color: #DE6C0D;
+  background-color: #F6BE34;
+  border: 1px;
+  border-radius: 4px;
+}
+
+.sign-up-button:hover {
+  color: #F6BE34;
+  background-color: #DE6C0D;
+}
+
+/* Other styles */
 h1 {
   font-size: 36pt;
   margin-top: 70px;

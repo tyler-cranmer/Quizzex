@@ -1,32 +1,34 @@
-/* Header*/
+/* Navigation Bar */
 
-header{
-  height: 69px;
-  width: 100%;
-  border-bottom: 1px solid seashell;
-  position: fixed;
-  z-index: 1;
-  align-items: center;
+#logo {
+  font-family: "Barrio";
+  display: inline;
 }
 
-.header-inner{
-  padding: 0 0;
-  align-items: center;
+.log-in-button {
+  font-weight: bold;
+  color: white;
+  background-color: #0062cc;
+  border: 1px;
+  border-radius: 4px;
 }
 
-header img{
-  height: 60px;
-  padding-left: 0;
+.log-in-button:hover {
+  color: #0062cc;
+  background-color: #1A80EE;
 }
 
-nav{
-  text-align: right;
-  flex-grow: 1;
+.sign-up-button {
+  font-weight: bold;
+  color: #DE6C0D;
+  background-color: #F6BE34;
+  border: 1px;
+  border-radius: 4px;
 }
 
-nav span{
-  display: inline-block;
-  padding: 20px 10px;
+.sign-up-button:hover {
+  color: #F6BE34;
+  background-color: #DE6C0D;
 }
 
 
@@ -87,7 +89,7 @@ main{
   max-width: 81.25em;
   padding: 0;
   z-index: -9999;
-  
+
 }
 
 #deck-name{
@@ -119,7 +121,7 @@ h4{
   padding-right: 2.5rem;
   padding-bottom: 2.5rem;
   position: relative;
-  
+
 }
 
 .decks{
