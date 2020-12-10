@@ -92,11 +92,3 @@
     </footer>
 </body>
 </html>
-
-	<script>
-		function deckClicked(e) {
-			var id = e.target.getAttribute("data-id");
-			window.location.href="/study?deckname=" + encodeURI(e.target.innerText) + "&deckID=" +  id;
-		}
-		document.querySelectorAll(".decks").forEach(function f(x) { x.addEventListener('click',deckClicked);}); 
-	</script>

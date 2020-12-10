@@ -132,7 +132,7 @@ h4{
 }
 
 .decks:hover {
-	border:2px solid black;
+	border:2px;
 }
 
 

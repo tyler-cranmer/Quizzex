@@ -226,8 +226,8 @@ def goToStudy():
     if 'username' in session:
         isLoggedIn = True
     # retrive deckname from the form
-    deck = request.values.get('deckname', None)
-    deckID = request.values.get('deckID', None)
+    deck = request.variables.get('deckname', None)
+    deckID = request.variables.get('deckID', None)
     #if(request.method == 'POST'):
     #    return render_template('study_card.html', deckname=deck, deckID=deckID, isLoggedIn=isLoggedIn)
     return render_template('study_card.html', deckname=deck, deckID=deckID, isLoggedIn=isLoggedIn)
