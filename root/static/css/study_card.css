@@ -1,3 +1,13 @@
+:root {
+  --main-background-color: #90EE90;
+  --main-text-color: black;
+  --secondary-background-color: #D5F9D5;
+}
+
+body {
+  background-color: var(--main-background-color);
+}
+
 /* Navigation Bar */
 
 #logo {
