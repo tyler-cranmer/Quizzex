@@ -181,6 +181,7 @@ def goToLibrary():
                 '<div class="deckForm">' +
                 '<form method="POST" action="/study" class="">' +
                 '<input name="deckname" type="hidden" value="' + deck[0] + '"/>' +
+                '<input name="deckID" type="hidden" value="' + str(deck[1]) + '"/>' +
                 '<input name="study" class="deck" type="submit" value="' + deck[0] + '"/>' +
                 '</form>' +
                 '<form method="POST" action="/editDeck" class="button_form">' +
