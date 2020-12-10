@@ -65,7 +65,7 @@
       {% endif %}
 
       <form>
-	      <input type='hidden' id='deckID' value='{{ deckID }}'/>
+	      <input type='hidden' name='deckID' value='{{ deckID }}'/>
 	</form>
     <main>
         <div class="UI-Container UI-Container-is-full">

@@ -339,7 +339,7 @@ def deleteCard():
 @app.route("/shuffleCard", methods=['GET', 'POST'])
 def api_info():
         deck_id = request.args.get("deckID",None)
-        deck_cards = get_cards1(deck_id)
+        deck_cards = get_cards(deck_id)
         #user = session['username']
         #deckname=get_decks(user)
         #deckID=get_deckID(deckname[0][0])

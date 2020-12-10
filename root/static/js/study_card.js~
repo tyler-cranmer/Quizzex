@@ -21,7 +21,7 @@ function flip_back() {
 //Flip through deck of cards
 $(document).ready(function() {
     $.ajax({ //used to convert python tuple into JS array
-        url: '/shuffleCard?deckID='+document.getElementById("deckID").value,
+        url: '/shuffleCard',
         success: function(data) {
             console.log('retrieved python list');
             temp = JSON.parse(data);
