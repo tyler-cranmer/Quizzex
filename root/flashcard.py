@@ -48,38 +48,44 @@ def mysite():
 # Validates the entered username and password
 # If valid, sets session variables and goes to user's library page
 # If invalid, returns to login page and display failed message
-@app.route('/doLogin')
+@app.route('/doLogin', methods=['GET', 'POST'])
 def dologin():
-    username=request.args.get('username', None)
-    password=request.args.get('password', None)
-    valid = login(username,password)
-    if (valid == True):
-        session['username'] = username
-        return goToLibrary()
+    if(request.method == 'POST'):
+        username=request.form.get('username', None)
+        password=request.form.get('password', None)
+        valid = login(username,password)
+        if (valid == True):
+            session['username'] = username
+            return goToLibrary()
+        else:
+            return render_template('Signinpage.html', failedLoginMessage="Failed login: please try again with a valid username and password.")
     else:
-        return render_template('Signinpage.html', failedLoginMessage="Failed login: please try again with a valid username and password.")
+        return render_template('Signinpage.html', failedLoginMessage="Woops! Something went wrong. Please try again.")
 
 # Validates the entered username and password
 # If valid, sets session variables and goes to user's library page
 # If invalid, returns to signup page and displays error message
-@app.route('/doSignup')
+@app.route('/doSignup', methods=['GET', 'POST'])
 def doSignup():
-    username = request.args.get('username', None)
-    password1 = request.args.get('password1', None)
-    password2 = request.args.get('password2', None)
-    email = request.args.get('email', None)
+    if(request.method == 'POST'):
+        username = request.form.get('username', None)
+        password1 = request.form.get('password1', None)
+        password2 = request.form.get('password2', None)
+        email = request.form.get('email', None)
 
-    status = add_user(username, password1, password2, email)
+        status = add_user(username, password1, password2, email)
 
     # Check status message
     # If valid, update the username session property and perform goToLibrary
-    if status == "Success!":
-        session['username'] = username
-        return goToLibrary()
+        if status == "Success!":
+            session['username'] = username
+            return goToLibrary()
+        else:
+            return render_template('SignUp.html', signupFailureError=status)
 
     # If invalid, render the 'SignUp' template (again) and pass the error message as a keyword argument
     else:
-        return render_template('SignUp.html', signupFailureError=status)
+        return render_template('SignUp.html', signupFailureError="Woops! Something went wrong. Please try again.")
 
 # Navigates to create-new-card.html
 @app.route('/goToCreateCard')
@@ -333,4 +339,3 @@ def api_info():
 #         deck_cards = get_cards1(deckID)
 #         cards = json.dumps(deck_cards)
 #         return (cards)
-    

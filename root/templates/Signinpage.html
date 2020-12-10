@@ -32,7 +32,7 @@
                   <p id="failedLoginText">{{ failedLoginMessage }}</p>
                 {% endif %}
                 <div class = "login_container">
-                      <form id="loginForm" method="get" class="form_login" action="/doLogin">
+                      <form id="loginForm" method="POST" class="form_login" action="/doLogin">
                         <div class="form_login">
                           <label for="username">Username: </label>
                           <input type="username" name="username" id="username" required>

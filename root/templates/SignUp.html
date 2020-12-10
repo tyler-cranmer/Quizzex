@@ -30,7 +30,7 @@
                 </div>
                 <div class = "login_container">
                     <script type="text/javascript" src="../static/js/signup.js"></script>
-                    <form id="SignupForm" method="get" class="form_signup" action="/doSignup">
+                    <form id="SignupForm" method="POST" class="form_signup" action="/doSignup">
                         <div class="container">
                             <p>Please fill out this form to create an account.</p>
                             <p>Already have an account? <a href="/signIn">Sign in</a>.</p>
@@ -60,7 +60,7 @@
                             {% endif %}
                         </div>
 
-                        
+
                       </form>
                 </div>
             </main>
