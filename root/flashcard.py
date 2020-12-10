@@ -295,9 +295,22 @@ def goToPublicDecks():
     isLoggedIn = False
     if 'username' in session:
         isLoggedIn = True
-    # TO DO
-    # add function to retrieve all public decks from DATABASE
-    return render_template('publicDecks.html', decks=None, isLoggedIn=isLoggedIn)
+    # retrieve a list of public decks from database in the form [("deckName1",),("deckName2",),...]
+    public_decks = get_public_decks()
+    deck_html = None
+    # For each deck, create an html form
+    if(public_decks):
+        deck_html = ""
+        for deck in public_decks:
+            deck_html = (deck_html +
+                '<div class="deckForm">' +
+                '<form method="POST" action="/study" class="">' +
+                '<input name="deckname" type="hidden" value="' + deck[0] + '"/>' +
+                '<input name="deckID" type="hidden" value="' + str(deck[1]) + '"/>' +
+                '<input name="study" class="deck" type="submit" value="' + deck[0] + '"/>' +
+                '</form><br>' +
+                '</div>')
+    return render_template('publicDecks.html', decks=deck_html, isLoggedIn=isLoggedIn)
 
 @app.route('/deleteCard', methods=['GET', 'POST'])
 def deleteCard():
