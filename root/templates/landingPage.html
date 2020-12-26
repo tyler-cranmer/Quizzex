@@ -27,53 +27,70 @@
         <title>Quizzex</title>
     </head>
 
-
-
-    <body style="background-color:#90EE90">
+    <body>
       {% if isLoggedIn %}
-        <!-- Navigation Bar https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp -->
-        <nav class="navbar navbar-expand-sm fixed-top" style="background-image: url('../static/img/header.jpg');">
-          <!-- Brand Logo -->
-          <a class="navbar-brand" href="/">
-            <p id="logo">Quizzex</p>
-            <img src="../static/img/logo-transparent.png" alt="Logo" style="width:40px;">
-          </a>
-          <ul class="nav navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="/library">Library</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/publicDecks">Public</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/goToCreateDeck">Create Deck</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/doLogout">Sign Out</a>
-            </li>
-          </ul>
-        </nav>
-        {% else %}
-        <nav class="navbar navbar-expand-sm fixed-top" style="background-image: url('../static/img/header.jpg');">
-          <!-- Brand Logo -->
-          <a class="navbar-brand" href="/">
-            <p id="logo">Quizzex</p>
-            <img src="../static/img/logo-transparent.png" alt="Logo" style="width:40px;">
-          </a>
-          <ul class="nav navbar-nav ml-auto">
-            <li class="nav-item active" style="margin-right: 10px;">
-              <a class="nav-link blue-button" href="/publicDecks">Public</a>
-            </li>
-            <li class="nav-item active" style="margin-right: 10px;">
-              <a class="nav-link orange-button" href="/signIn">Log In</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link blue-button" href="/signUp">Sign Up</a>
-            </li>
-          </ul>
-        </nav>
-        {% endif %}
 
+      <header class="bg-white d-flex">
+        <div class="container d-flex header-inner">
+        <div class="logo">
+          <a class = "navbar-brand" href="/">
+          <p id="logo">Quizzex</p>
+            <img src="../static/img/logo-transparent.png" alt="Logo" style="width: 60px; height: 40px;"/>
+          </a>
+        </div>
+        <nav>
+            <div class="container nav-inner">
+                <div class="menu nav">
+                    <div class="nav-inner-cont nav-left left">
+                    </div>
+
+                    <div class="nav-inner-cont nav-right right">
+                        <div class="log-in menu-item-right">
+                            <a href="/library" class="button">Account</a>
+                        </div>
+                        <div class="sign-up menu-item-right">
+                            <a href="/doLogout" class="button">Sign Out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        </div>
+    </header>
+        
+        <!-- Navigation Bar https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp -->
+  
+        {% else %}
+
+        <header class="bg-white d-flex">
+          <div class="container d-flex header-inner">
+          <div class="logo">
+            <a class = "navbar-brand" href="/">
+            <p id="logo">Quizzex</p>
+              <img src="../static/img/logo-transparent.png" alt="Logo" style="width: 60px; height: 40px;"/>
+            </a>
+          </div>
+          <nav>
+              <div class="container nav-inner">
+                  <div class="menu nav">
+                      <div class="nav-inner-cont nav-left left">
+                      </div>
+  
+                      <div class="nav-inner-cont nav-right right">
+                          <div class="log-in menu-item-right">
+                              <a href="/signIn" class="button">Login</a>
+                          </div>
+                          <div class="sign-up menu-item-right">
+                              <a href="/signUp" class="button">Sign up</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </nav>
+          </div>
+      </header>
+
+        {% endif %}
 
         <main>
             <div class="UI-Container UI-Container-is-full">
@@ -89,6 +106,7 @@
 
     <footer>
         <h5>Team RegEx 2020</h5>
+        <h6>Tyler Cranmer, Allison Bernstein, Samuel Terry, Benjamin Price</h5>
     </footer>
 </body>
 </html>

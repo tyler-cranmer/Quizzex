@@ -1,3 +1,11 @@
+/* root */
+:root {
+  --main-background-color: #f1f2f4;
+  --main-text-color: black;
+  /* --secondary-background-color: #D5F9D5; */
+}
+
+
 /* Header*/
 
 header{
@@ -7,7 +15,7 @@ header{
   position: fixed;
   z-index: 1;
   align-items: center;
-
+  box-shadow: 0 0 2rem rgba(0,0,0,.1);
 }
 
 .header-inner{
@@ -30,6 +38,16 @@ nav span{
   padding: 20px 10px;
 }
 
+.navbar-brand {
+  display: inline-block;
+  padding-top: .3125rem;
+  padding-bottom: .3125rem;
+  margin-right: 1rem;
+  font-size: 1.50rem;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
 
 /*Location*/
 
@@ -39,6 +57,26 @@ nav span{
 
 
 /* HEADER NAVIGATION STYLE */
+
+.nav-right {
+  width: calc(100% - 25rem);
+  display: flex;
+  justify-content: flex-end;
+  }
+  
+  .nav-left {
+  width: 25rem;
+  display: flex;
+  }
+  
+  .menu {
+    display: flex;
+  }
+  
+  .menu-item-right {
+        margin: 0 10px;
+  }
+
 
 #logo {
   font-family: "Barrio";
@@ -86,8 +124,7 @@ main{
   margin-left:auto;
   margin-right: auto;
   max-width:81.75em;
-  height: 700px;
-  padding:0;
+  padding: 0;
 }
 
 .UI-Container{
@@ -97,7 +134,7 @@ main{
   margin-left: auto;
   margin-right: auto;
   max-width: 81.25em;
-  padding: 0;
+  padding:2rem 0 0;
 }
 
 .Info-Description{
@@ -123,7 +160,10 @@ h4{
   box-shadow: 0 0 2rem rgba(0,0,0,.1);
   color: black;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
   font-size: 1.125 rem;
   line-height: 1.625rem;
   padding: 1rem;
@@ -132,7 +172,7 @@ h4{
 }
 
 .decks:hover {
-	border:2px solid black;
+	border:2px solid black ;
 }
 
 
@@ -161,6 +201,7 @@ border-image: initial;
   border: 1px #ffc107 solid;
   font-size: 13px;
   font-weight: bold;
+  font-family:Tahoma;
   padding: 7px 30px;
   background: #ffc107;
   color: #cc3a00;
@@ -175,6 +216,7 @@ border-image: initial;
 border: 1px #0062cc;
 font-size: 13px;
 font-weight: bold;
+font-family:Tahoma;
 padding: 7px 30px;
 background:transparent;
 color:#0062cc;
@@ -188,6 +230,9 @@ line-height:18px;
 /* Footer */
 
 footer{
-  text-align: left;
-  color: #0062cc
+  text-align: center;
+  color: #0062cc;
+  margin: 2.5rem 0 1.5 0;
+  padding: 1.5rem; 
 }
+
