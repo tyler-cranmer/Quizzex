@@ -48,7 +48,7 @@ def mysite():
         deck_html=""
         count = 0
         for deck in public_decks:
-                if (count < 3):
+                if (count < 6):
                     deck_html = (deck_html + "<div class='decks' data-id='" + str(deck[1]) + "' style='background-color: #D5F9D5; border-radius:12px;'>" + str(deck[0]) + "</div>")
                 count = count + 1;
 
