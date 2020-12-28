@@ -1,4 +1,6 @@
-Project title: Flash Card App (WIP)
+Project title: Quizzex (WIP)
+
+Project URL: https://quizzexbyregex.herokuapp.com/
 
 Team members: Tyler Cranmer, Allison Bernstein, Samuel Terry, Benjamin Price
 
