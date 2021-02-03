@@ -1,4 +1,4 @@
-Project title: Quizzex (WIP)
+Project title: Quizzex
 
 Project URL: https://quizzexbyregex.herokuapp.com/
 
