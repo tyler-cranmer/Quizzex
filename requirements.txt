@@ -28,5 +28,5 @@ requests-unixsocket==0.2.0
 SecretStorage==2.3.1
 sqlparse==0.4.1
 systemd-python==234
-urllib3==1.25.8
+urllib3==1.26.5
 Werkzeug==1.0.1
