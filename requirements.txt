@@ -29,4 +29,4 @@ SecretStorage==2.3.1
 sqlparse==0.4.2
 systemd-python==234
 urllib3==1.26.5
-Werkzeug==1.0.1
+Werkzeug==2.2.3
